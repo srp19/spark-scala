@@ -6,7 +6,7 @@ object hadoopfs {
     println("hadoop fs commands")
     
     /*
-    _______________________________________
+    __________________________________________________________________
     #hadoop fs commands
     
     hadoop fs -ls
