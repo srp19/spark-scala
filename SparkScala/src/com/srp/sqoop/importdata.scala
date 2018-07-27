@@ -35,7 +35,8 @@ object importdata {
       --connect jdbc:mysql://ms.itversity.com:3306/retail_db \
       --username retail_user \
       --password itversity \
-      --query "INSERT INTO orders VALUES (100000, '2017-10-31 00:00:00.0', 100000, 'DUMMY')"
+      --query "INSERT INTO orders VALUES 
+      (100000, '2017-10-31 00:00:00.0', 100000, 'DUMMY')"
     
     sqoop eval \
       --connect jdbc:mysql://ms.itversity.com:3306/retail_export \
