@@ -44,6 +44,7 @@ object importdata {
       --query "CREATE TABLE dummy (i INT)"
     
     insert commands
+    
     sqoop eval \
       --connect jdbc:mysql://ms.itversity.com:3306/retail_export \
       --username retail_user \
