@@ -6,12 +6,12 @@ object importdata {
     println("importing data to HDFS using sqoop")
     
     /*
-    ______________________________________________________
+    _______________________________________
     #connect to mysql
     
     mysql -u retail_user -h ms.itversity.com -p
     
-    ______________________________________________________
+    _______________________________________
     #list databases
     sqoop list-databases \
       --connect jdbc:mysql://ms.itversity.com:3306 \
@@ -23,7 +23,7 @@ object importdata {
       --username retail_user \
       --password itversity
     
-    ______________________________________________________
+    _______________________________________
     #eval
     sqoop eval \
       --connect jdbc:mysql://ms.itversity.com:3306/retail_db \
@@ -55,7 +55,7 @@ object importdata {
       --password itversity \
       --query "SELECT * FROM dummy"
       
-    ______________________________________________________
+    _______________________________________
     #simple import
       
     sqoop import \
@@ -72,7 +72,7 @@ object importdata {
       --table order_items \
       --target-dir /user/dgadiraju/sqoop_import/retail_db/order_items
   
-  	______________________________________________________
+  	_______________________________________
   	#execution life cycle
   	
   		Here is the execution lifecycle of Sqoop.
@@ -103,7 +103,7 @@ object importdata {
         --num-mappers 1 \
         --append
   	
-  	______________________________________________________
+  	_______________________________________
   	#managing directories
   	
       By default sqoop import fails if target directory already exists
@@ -127,7 +127,7 @@ object importdata {
         --num-mappers 1 \
         --append
         
-    ______________________________________________________  
+    _______________________________________  
     #importing data, using splity by
     
     	Importing Data
@@ -171,7 +171,7 @@ object importdata {
         --warehouse-dir /user/dgadiraju/sqoop_import/retail_db \
         --split-by order_status
   	
-  	______________________________________________________
+  	_______________________________________
   	#auto reset to one mapper
   	
     	Auto Reset to One Mapper
@@ -194,7 +194,7 @@ object importdata {
       
       hadoop fs -ls /user/dgadiraju/sqoop_import/retail_db/order_items_nopk
   	
-  	______________________________________________________
+  	_______________________________________
   	#different file formats
   		
   		While importing data using Sqoop we can save data into different file formats. 
@@ -214,7 +214,7 @@ object importdata {
         --warehouse-dir /user/dgadiraju/sqoop_import/retail_db \
         --num-mappers 2 \
         --as-sequencefile
-  	______________________________________________________
+  	_______________________________________
   	#export
   	
 		sqoop export \ 
@@ -237,7 +237,7 @@ object importdata {
       --input-fields-terminated-by "\001" \
       --num-mappers 1
       
-    ______________________________________________________
+    _______________________________________
     #compression
    
     Compression algorithms
@@ -275,7 +275,7 @@ object importdata {
       --compress \
       --compression-codec org.apache.hadoop.io.compress.SnappyCodec
     
-    ______________________________________________________
+    _______________________________________
     #boundary value
     What is Boundary Value Query in Sqoop
     Sqoop runs it mapper task by executing the 
@@ -299,7 +299,7 @@ object importdata {
       --warehouse-dir /user/dgadiraju/sqoop_import/retail_db \
       --boundary-query 'select 100000, 172198'
     
-    ______________________________________________________
+    _______________________________________
     #transformation and filtering
     
     Transformations and filtering in Sqoop.
@@ -326,7 +326,7 @@ object importdata {
       --query "select o.*, sum(oi.order_item_subtotal) order_revenue from orders o join order_items oi on o.order_id = oi.order_item_order_id and \$CONDITIONS group by o.order_id, o.order_date, o.order_customer_id, o.order_status" \
       --split-by order_id
    
-    ______________________________________________________
+    _______________________________________
     #Exporting Data
     Update and Upsert/Merge
     
@@ -378,7 +378,7 @@ object importdata {
     --input-fields-terminated-by "\001" \
     --num-mappers 1
     
-    ______________________________________________________
+    _______________________________________
     #Stage tables
       
       Launch Hive and Insert the data into the table
