@@ -1,6 +1,80 @@
 -----------------------------------------------------------
-    EC2
+   	VPC
 -----------------------------------------------------------
+	Virtual Private cloud
+
+	VPC without wizard
+
+	Security Groups
+		default
+
+	CIDR range
+	/16 - 65000+ ip address
+
+	tenancy default 
+
+	Root tables
+
+	Subnets
+	   -- no default
+
+	Route tables
+
+	Interent Gateway
+	   Not created by default
+
+	Access Control Lists
+
+	-----
+	steps
+	-----
+
+	1. Create first subnet
+
+	10.0.1.0\24 - 256 ip address but only 251 can be used
+
+	availability zone
+	us-east-1a
+
+	custom VPC
+
+	only 251 available
+
+	-- reserved vpc ip address. 
+
+	vpc subnet sizing
+
+	first 4 and last 1
+		a. network address etc..
+
+	2. Create second subnet
+
+	us-east-1b
+	address range 10.0.2.0\24
+	CIDR range 
+
+	both privates Subnets
+
+	3. Internet Gateway IGW
+	detached
+	only vpc available
+	attach
+	**can't have multiple IGW's**
+
+	4. Route tables
+	subnet associations - none
+	main route table
+
+	create new route table
+		a. custom vpc
+		b. enable internet Access
+		c. add another route 0.0.0.0 target IGW
+		ip4 to ip6
+		
+
+
+
+
 	Elastic Cloud Computing
 	Virtual Machines in the cloud. 
 	Webservice that provides resizable compute in the cloud. 
