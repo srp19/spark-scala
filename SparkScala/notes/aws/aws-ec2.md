@@ -19,7 +19,7 @@
 
 Remember DIRTMCG (D for Density, I for IOPS, R for RAM, T - Cheap general purpose T2 Micro, M- Main choice for general purpose apps, C for compute, G for graphics)
 
-![Instance Types](ec2-instance-types.png)
+![Instance Types](./images/ec2-instance-types.png)
 
 ### What is EBS
 
@@ -53,7 +53,7 @@ EBS Volume Types
 
 EC2 instance Types in Picture
 
-![EC2 Instance Types](ec2-doc-mg-gift-px.jpg)
+![EC2 Instance Types](./images/ec2-doc-mg-gift-px.jpg)
  
 
 ## Section 5 Lecture 28 (Lets get our hands dirty! Launch an EC2 instance)
@@ -201,20 +201,20 @@ Why is Lambda cool?
  * spot
  * Dedicated Hosts
  
-![EC2 instance types revisited](ec2-instance-types-revisited.jpg)
+![EC2 instance types revisited](./images/ec2-instance-types-revisited.jpg)
 
 ![EBS revisited](ebs-revisited.jpg)
 SC1 and SC2 cannot be used as boot or root volumes. They can only be used as additional volumes.
 
-![Volumes revisited](volumes-revisited.jpg)
+![Volumes revisited](./images/volumes-revisited.jpg)
 
-![Volumes vs snapshots revisited](volumes-vs-snapshots-revisited.jpg)
+![Volumes vs snapshots revisited](./images/volumes-vs-snapshots-revisited.jpg)
 
-![Volumes vs snapshots security revisited](volumes-vs-snapshots-security-revisited.jpg)
+![Volumes vs snapshots security revisited](./images/volumes-vs-snapshots-security-revisited.jpg)
 
 To create a snapshot for Amazon EBS volumes that serve as root devices, you should stop the instance before taking the snapshot.
 
-![EBS vs instance store revisited](ebs-vs-instancestore-revisited.jpg)
+![EBS vs instance store revisited](./images/ebs-vs-instancestore-revisited.jpg)
 
 ### How to deal with a Raid Array (How to take a snapshot of a raid array)
 

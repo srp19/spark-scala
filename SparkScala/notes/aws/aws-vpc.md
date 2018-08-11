@@ -13,7 +13,7 @@ including selection of your own ip address range, creation of subnets and config
  Out of which 10.0.0.0 is the largest octet and privdes you with most nummber of ip addresses. But when using VPC AWS allows you to use the 
  largest network size of 10.0.0.0/16 CIDR block
 
-![Virtual Private Cloud](aws-vpc.jpg)
+![Virtual Private Cloud](./images/aws-vpc.jpg)
 
 * Network ACLs and security groups can span over subnets.
 * 1 subnet can span only one availability zone.
@@ -54,7 +54,7 @@ Due to the following for a 10.0.0.0/24 subnet.
  
  Lab on creating an instance in a Public Subnet. IGW creation, route table creation, attaching IGW to VPC etc.
  
- ![Virtual Private Cloud Lab summary](aws-vpc-diag.jpg)
+ ![Virtual Private Cloud Lab summary](./images/aws-vpc-diag.jpg)
  
 ## Section 8, Lecture 66 (Build your own custom VPC Part 2)
 
@@ -92,7 +92,7 @@ NAT instance vs NAT Gateway (http://docs.aws.amazon.com/AmazonVPC/latest/UserGui
 What will you do if you want to block traffic on a particular port for an ip address range. What will you use network acl or security groups?
 - Network ACL.
 
-![Network ACL vs Security Groups](nacl-vs-sg.jpg)
+![Network ACL vs Security Groups](./images/nacl-vs-sg.jpg)
 
 * Ephemeral ports:
 

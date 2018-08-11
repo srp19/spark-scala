@@ -38,11 +38,11 @@ message is deleted from the message queue only when its complete.
 
 SQS in action 
 
-![SQS in action](sqs-1.jpeg)
+![SQS in action](./images/sqs-1.jpeg)
 
-![SQS in action](sqs-2.jpg)
+![SQS in action](./images/sqs-2.jpg)
 
-![SQS in action](sqs-3.jpg)
+![SQS in action](./images/sqs-3.jpg)
 
 
  * SQS Autoscaling:
@@ -52,7 +52,7 @@ SQS in action
  kids of sayings on it. your application servers will see that a queue is growing very fast and then autoscale to bring the size down.
  It is the backbone of some of the prowerful websites like netflix and reddit.
  
- ![SQS Autoscaling](sqs-autoscaling.jpg)
+ ![SQS Autoscaling](./images/sqs-autoscaling.jpg)
 
  
  * SQS exam tips:

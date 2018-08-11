@@ -122,7 +122,7 @@ Dynamodb is fast and flexible nosql database service for all applications that n
   * Read throughput $0.0065 per hour for every 50 units.
   * Storage cost of $0.25GB per month.
   
-  ![Pricing Structure](dynamodb-price-structure.jpg)
+  ![Pricing Structure](./images/dynamodb-price-structure.jpg)
    
    Dynamod DB can be very expensive for writes but is very cheap for reads. So if you have a scenario where you need lots of reads and few writes and you need it to be very very scalable with really good performance and you do not need to SQL join queries which means it can run on a no sql database, then you might want to look at dynamodb as opposed to rds.
    

@@ -448,7 +448,7 @@ Steps:
 
 #### AWS Cloudformation masterclass webinar notes
 
-![Cloudformation - Components and Technology](section-3-1.jpg)
+![Cloudformation - Components and Technology](./images/section-3-1.jpg)
 
 ##### Troposphere (https://github.com/cloudtools/troposphere)
 

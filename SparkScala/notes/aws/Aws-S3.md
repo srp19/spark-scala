@@ -127,13 +127,13 @@ Types of Encryption for S3 Modes
 
 * Import Export Disc: Basically whenever you want to transfer large amounts of data to AWS storage infrastructure you can choose to skip internet, load your data to a disc and send it to Amazon. Amazon would load the data from disc to S3 and return the disc back to you. Consider a case where you have 100 GB of data and an internet speed of 2 MBPS, it would take anwhere between 50-80 days to transfer the data. Amazon would transfer it within a day and return the disc back.
 
-![Import-export-disc](import-export-disc.png)
+![Import-export-disc](./images/import-export-disc.png)
 
 * Snowball: Snowball is a petabyte-scale data transfer solution that uses secure appliances to transfer data in and out of aws. Using snowball addresses common problems with large scale data transfers including high network costs, longer transfer times and security concerns. 50 TB per snowball currently. Snowball uses multiple layers so security designed to protect your data including tamper-resistant enclosures, 256 bit encryption, and an industry standard Trusted Platform Modules (TPM) designed to ensure both security and full chain of custody of your data.
 
-![Snowball](snowball.png)
+![Snowball](./images/snowball.png)
 
-![Snowball Vs import Export](snowball-vs-import.png)
+![Snowball Vs import Export](./images/snowball-vs-import.png)
 
 ### Exam Tips
 * Import/Export Disk

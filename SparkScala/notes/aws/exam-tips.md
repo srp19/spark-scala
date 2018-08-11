@@ -2,18 +2,18 @@
 
 ## Section 12, Lecture 92 (Exam Tips based on Student Feedback)
 
-![Lec 92](lec-92-1.jpg)
-![Lec 92](lec-92-2.jpg)
-![Lec 92](lec-92-3.jpg)
-![Lec 92](lec-92-4.jpg)
-![Lec 92](lec-92-5.jpg)
-![Lec 92](lec-92-6.jpg)
-![Lec 92](lec-92-7.jpg)
+![Lec 92](./images/lec-92-1.jpg)
+![Lec 92](./images/lec-92-2.jpg)
+![Lec 92](./images/lec-92-3.jpg)
+![Lec 92](./images/lec-92-4.jpg)
+![Lec 92](./images/lec-92-5.jpg)
+![Lec 92](./images/lec-92-6.jpg)
+![Lec 92](./images/lec-92-7.jpg)
 
 ## Section 12, Lecture 93 (Consolidated Billing)
 
-![Lec 93](lec-93-1.jpg)
-![Lec 93](lec-93-2.jpg)
+![Lec 93](./images/lec-93-1.jpg)
+![Lec 93](./images/lec-93-2.jpg)
 
 
 ## Section 12, Lecture 94 (Resource Groups and tagging)
@@ -45,13 +45,13 @@ Resource group can bring together tagged resources across all the regions.
 How is Direct Connect different from a VPN?
 VPN connections can be configured in munites and can be a good solution if you have an immediate need, have low to modest bandwidth requirements, and can tolerate the inherant variability in Internet-based connectivity. Direct connect doesnot involve the internet instead it uses dedicated, private network connections between your intranet and Amazon VPC.
 
-![Lec 96](lec-96-1.jpg)
-![Lec 96](lec-96-2.jpg)
-![Lec 96](lec-96-3.jpg)
+![Lec 96](./images/lec-96-1.jpg)
+![Lec 96](./images/lec-96-2.jpg)
+![Lec 96](./images/lec-96-3.jpg)
 
 ## Section 12, Lecture 97 (Active Directory Integration)
 
-![Lec 97](lec-97-1.jpg)
+![Lec 97](./images/lec-97-1.jpg)
 
 Read
 
@@ -94,14 +94,14 @@ AWS services to achieve this include
 * Amazon Glacier
 
 
-![Lec 99](lec-99-1.jpg)
-![Lec 99](lec-99-2.jpg)
-![Lec 99](lec-99-3.jpg)
-![Lec 99](lec-99-4.jpg)
-![Lec 99](lec-99-5.jpg)
-![Lec 99](lec-99-6.jpg)
-![Lec 99](lec-99-7.jpg)
-![Lec 99](lec-99-8.jpg)
+![Lec 99](./images/lec-99-1.jpg)
+![Lec 99](./images/lec-99-2.jpg)
+![Lec 99](./images/lec-99-3.jpg)
+![Lec 99](./images/lec-99-4.jpg)
+![Lec 99](./images/lec-99-5.jpg)
+![Lec 99](./images/lec-99-6.jpg)
+![Lec 99](./images/lec-99-7.jpg)
+![Lec 99](./images/lec-99-8.jpg)
 
 Best Practises - Detective Controls Questions
 
@@ -137,12 +137,12 @@ Reliability on cloud consists of 3 areas
 * Change Management
 * Failure Management
 
-![Lec 100](lec-100-1.png)
-![Lec 100](lec-100-2.png)
-![Lec 100](lec-100-3.png)
-![Lec 100](lec-100-4.png)
-![Lec 100](lec-100-5.png)
-![Lec 100](lec-100-6.png)
+![Lec 100](./images/lec-100-1.png)
+![Lec 100](./images/lec-100-2.png)
+![Lec 100](./images/lec-100-3.png)
+![Lec 100](./images/lec-100-4.png)
+![Lec 100](./images/lec-100-5.png)
+![Lec 100](./images/lec-100-6.png)
 
 
 ## Section 13, Lecture 101 (Performance Efficiency)
@@ -162,19 +162,19 @@ Performance efficiency in cloud consists of 4 areas:
 * Database
 * Space-time trade-off
 
-![Lec 101](lec-101-1.png)
-![Lec 101](lec-101-2.png)
-![Lec 101](lec-101-3.png)
-![Lec 101](lec-101-4.png)
-![Lec 101](lec-101-5.png)
-![Lec 101](lec-101-6.png)
-![Lec 101](lec-101-7.png)
-![Lec 101](lec-101-8.png)
-![Lec 101](lec-101-9.png)
-![Lec 101](lec-101-10.png)
-![Lec 101](lec-101-11.png)
-![Lec 101](lec-101-12.png)
-![Lec 101](lec-101-13.png)
+![Lec 101](./images/lec-101-1.png)
+![Lec 101](./images/lec-101-2.png)
+![Lec 101](./images/lec-101-3.png)
+![Lec 101](./images/lec-101-4.png)
+![Lec 101](./images/lec-101-5.png)
+![Lec 101](./images/lec-101-6.png)
+![Lec 101](./images/lec-101-7.png)
+![Lec 101](./images/lec-101-8.png)
+![Lec 101](./images/lec-101-9.png)
+![Lec 101](./images/lec-101-10.png)
+![Lec 101](./images/lec-101-11.png)
+![Lec 101](./images/lec-101-12.png)
+![Lec 101](./images/lec-101-13.png)
 
 
 ## Section 13, Lecture 103 (Pillar Four - Cost Optimization)
@@ -207,36 +207,36 @@ Cost optimization in cloud consists of 4 areas
    * Have you selected the appropriate pricing model to meet your cost targets?
    * Are there managed Services (higher level services than Amazon EC2, Amazon RDS, and Amazon S3) that you can use to improve your ROI.
 
-![Lec 101](lec-103-1.png)
+![Lec 101](./images/lec-103-1.png)
 
  * What access controls and procedures do you have in place to govern aws costs?
  * How are you monitoring usage and spending?
  * How do you decommission resources that you no longer need, or stop resources that are temporarily not needed?
  * How do you consider data-transfer charges when designing your architecture.
  
-![Lec 101](lec-103-2.png) 
+![Lec 101](./images/lec-103-2.png) 
   
   * Questions to be asked
    * How do you manage and/or consider the adoption of new services?
    
-![Lec 101](lec-103-3.png)
+![Lec 101](./images/lec-103-3.png)
 
 ## Section 13, Lecture 104 (Well Architected Framework Summary)
 
-![Lec 104](lec-104-1.png)
-![Lec 104](lec-104-2.png)
-![Lec 104](lec-104-3.png)
-![Lec 104](lec-104-16.png)
-![Lec 104](lec-104-5.png)
-![Lec 104](lec-104-6.png)
-![Lec 104](lec-104-7.png)
-![Lec 104](lec-104-8.png)
-![Lec 104](lec-104-9.png)
-![Lec 104](lec-104-10.png)
-![Lec 104](lec-104-11.png)
-![Lec 104](lec-104-12.png)
-![Lec 104](lec-104-13.png)
-![Lec 104](lec-104-14.png)
+![Lec 104](./images/lec-104-1.png)
+![Lec 104](./images/lec-104-2.png)
+![Lec 104](./images/lec-104-3.png)
+![Lec 104](./images/lec-104-16.png)
+![Lec 104](./images/lec-104-5.png)
+![Lec 104](./images/lec-104-6.png)
+![Lec 104](./images/lec-104-7.png)
+![Lec 104](./images/lec-104-8.png)
+![Lec 104](./images/lec-104-9.png)
+![Lec 104](./images/lec-104-10.png)
+![Lec 104](./images/lec-104-11.png)
+![Lec 104](./images/lec-104-12.png)
+![Lec 104](./images/lec-104-13.png)
+![Lec 104](./images/lec-104-14.png)
 
 
    

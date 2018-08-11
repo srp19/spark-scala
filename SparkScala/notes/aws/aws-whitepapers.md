@@ -37,12 +37,12 @@
  Amazon corporate Segration - Logically the Amazon production network is segregated from the Amzaon Corporate 
  Network by means of complex set of network security segration devices.
 
-![Exam Weightage](the-exam-weightage.jpg) 
-![Aws security model](shared-security-model.jpg)
-![Aws security responsibility](aws-sec-resp.jpg)
-![Customer security responsibility](cust-sec-resp.jpg)
-![Disk Commissioning](disk-decommissioning.jpg)
-![Network Security](network-security.jpg)
+![Exam Weightage](./images/the-exam-weightage.jpg) 
+![Aws security model](./images/shared-security-model.jpg)
+![Aws security responsibility](./images/aws-sec-resp.jpg)
+![Customer security responsibility](./images/cust-sec-resp.jpg)
+![Disk Commissioning](./images/disk-decommissioning.jpg)
+![Network Security](./images/network-security.jpg)
  
  So there was this question asked, does amazon.com network same as aws network. The answere is no.
  
@@ -57,41 +57,41 @@
   * Port Scanning
   * Packet Sniffing by other tenants
   
- ![AWS Credentials](aws-credentials.jpg)
- ![AWS Trusted Advisor](aws-trusted-advisor.jpg)
+ ![AWS Credentials](./images/aws-credentials.jpg)
+ ![AWS Trusted Advisor](./images/aws-trusted-advisor.jpg)
    
 ## Section 11, Lecture 87 (OverView of Security Process - Part 2) - Most Important whitepaper to read
 
-![Instance Isolation](instance-isolation.jpg)
-![Instance Isolation](instance-isolation-2.jpg)
-![Instance Isolation](instance-isolation-3.jpg)
-![Other Considerations](other-considerations.jpg)
-![Other Considerations](other-considerations-2.jpg)
-![Other Considerations](other-considerations-3.jpg)
-![Other Considerations](other-considerations-4.jpg)
+![Instance Isolation](./images/instance-isolation.jpg)
+![Instance Isolation](./images/instance-isolation-2.jpg)
+![Instance Isolation](./images/instance-isolation-3.jpg)
+![Other Considerations](./images/other-considerations.jpg)
+![Other Considerations](./images/other-considerations-2.jpg)
+![Other Considerations](./images/other-considerations-3.jpg)
+![Other Considerations](./images/other-considerations-4.jpg)
 
 ## Section 11, Lecture 88 (AWS Risk and complaince)
 
-![Lec 88](lec-88-1.jpg)
-![Lec 88](lec-88-2.jpg)
-![Lec 88](lec-88-3.jpg)
-![Lec 88](lec-88-4.jpg)
+![Lec 88](./images/lec-88-1.jpg)
+![Lec 88](./images/lec-88-2.jpg)
+![Lec 88](./images/lec-88-3.jpg)
+![Lec 88](./images/lec-88-4.jpg)
 
 ## Section 11, Lecture 89 (Storage Options in the cloud)
 
-![Lec 89](lec-89-1.jpg)
-![Lec 89](lec-89-2.jpg)
-![Lec 89](lec-89-3.jpg)
-![Lec 89](lec-89-4.jpg)
-![Lec 89](lec-89-5.jpg)
-![Lec 89](lec-89-6.jpg)
+![Lec 89](./images/lec-89-1.jpg)
+![Lec 89](./images/lec-89-2.jpg)
+![Lec 89](./images/lec-89-3.jpg)
+![Lec 89](./images/lec-89-4.jpg)
+![Lec 89](./images/lec-89-5.jpg)
+![Lec 89](./images/lec-89-6.jpg)
 
 ## Section 11, Lecture 90 (Architecting for the AWS Cloud)
 
-![Lec 90](lec-90-1.jpg)
-![Lec 90](lec-90-2.jpg)
-![Lec 90](lec-90-3.jpg)
-![Lec 90](lec-90-4.jpg)
+![Lec 90](./images/lec-90-1.jpg)
+![Lec 90](./images/lec-90-2.jpg)
+![Lec 90](./images/lec-90-3.jpg)
+![Lec 90](./images/lec-90-4.jpg)
 
  
  
