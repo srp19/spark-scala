@@ -2,8 +2,11 @@
    	VPC
 -----------------------------------------------------------
 	Virtual Private cloud
-
-	VPC without wizard
+	
+	default created:
+		Security Groups
+		Route table
+		
 
 	Security Groups
 		default
@@ -70,7 +73,7 @@
 		b. enable internet Access
 		c. add another route 0.0.0.0 target IGW
 		ip4 to ip6
-		
+
 
 
 

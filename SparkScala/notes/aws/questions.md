@@ -1,0 +1,2 @@
+## Route 53
+* How does Route53 know which resource record will give it the lowest latency. Say I have one domains mapped to two elbs with latency based routing policy. One elb is in Japan and another in korea. A visitor is accessing my Site from China. How will route53 know whether to go to Japan elb or Korea ELB. Will it keep on checking the latency by sending packes to both the elbs or will it serve based on either Japan or Korea is the nearest region. 
