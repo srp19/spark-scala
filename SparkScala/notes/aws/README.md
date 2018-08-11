@@ -1,8 +1,3 @@
-technoavis
-==========
-
-Repository for techniavis
-
 * [1. Introduction to the Course](introduction.md)
 * [2. AWS EC2](aws-ec2.md)
 * [3. AWS S3](Aws-S3.md)
