@@ -9,8 +9,10 @@
    *. CPU
    *. RAM
    *. Disk Drive (only supports write tests).
+
+
    
-   ```
+   ```bash
    apt-get install stress
    ```
 ## Section 10 Lecture 83 (Cloudformation - Create a fault tolerant wordpress site using cloudformation)

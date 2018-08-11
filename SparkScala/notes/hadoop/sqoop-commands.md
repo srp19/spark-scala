@@ -2,9 +2,12 @@ _______________________________________________________________________
 #connect to mysql
 ```sql
 mysql -u retail_user -h ms.itversity.com -p
+```
 
 _______________________________________________________________________
 #list databases
+
+```sql
 sqoop list-databases \
   --connect jdbc:mysql://ms.itversity.com:3306 \
   --username retail_user \
@@ -14,7 +17,7 @@ sqoop list-tables \
   --connect jdbc:mysql://ms.itversity.com:3306/retail_db \
   --username retail_user \
   --password itversity
-
+```
 _______________________________________________________________________
 #eval
 sqoop eval \
