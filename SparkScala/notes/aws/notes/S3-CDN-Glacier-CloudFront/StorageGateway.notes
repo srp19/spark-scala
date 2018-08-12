@@ -1,0 +1,52 @@
+-----------------------------------------------------------
+    Storage Gateway
+-----------------------------------------------------------
+AWS storage gateway is a service that connects an on-premises
+software appliance with cloud-based storage to provide seamless and
+secure integration between an organization's on-premises IT environment
+and AWS's storage infrastructure. The service enables you to securely
+store data to AWS cloud for scalable and cost-effective storage. 
+(pic:storagegateway.png)
+AWS storage gateway's software appliance is available for download as a 
+vm image that you install on a host in your datacenter. 
+Once you've installed your gateway and associated it with your AWS account
+through the activation process, you can use the AWS management console to 
+create the storage gateway option that is right for you. 
+
+# 4 different types of gateways
+1. File Gateway(NFS)
+	pictures and videos.
+	files are stored as objects in your s3 buckets, accessed through 
+	Network File System (NFS) mount point. 
+	Ownership, permissions and timestamps are durably stored in S3
+	in the user-metadata of the object associated with the file. 
+	Once objects are transferred to s3, they can be managed as native
+	S3 objects and bucket policies such as versioning lifecycle management
+	and corss origin replication apply directly to objects stored in
+	your bucket. 
+	(pic:storagegatewayfilegateway.png)
+2. Volume Gateway(iSCSI)
+	Block based storage (store operating system, applications)
+		1. Stored Volumes
+			Lets you store primary data locally, while asynchronously 
+			backing upd that data to AWS. Stored volumes provide your 
+			on premises applications with low latency access to their
+			entire datasets, while providing durable offsite backups. 
+			EBS snapshots are incremental. 
+			!1GB to 16TB in size for Stored Volumes.
+		2. Cached Volumes
+			S3 is primary storage service. 
+			While retaining frequently accessed data locally in your 
+			storage gateway. 
+			Minimizes need to scale your on premises storage infrastructure.
+			low latency to frequently accessed data. 
+			Storage volumes up to 32TB in size and attach them to iSCSi
+			devices from your on premises application servers. 
+			!1GB-32TB in size for Cached Volumes. 
+
+	can be asynchronosly synced. 
+	all snapshots are incremental. and is compressed to minimize changes. 
+
+3. Tape Gateway(VTL)
+	for backups. virtual tape cards. 
+

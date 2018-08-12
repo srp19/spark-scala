@@ -1,0 +1,23 @@
+-----------------------------------------------------------
+    S3 Security
+-----------------------------------------------------------
+1. By default all newly created buckets are private. 
+2. You can create access control to your buckets using:
+	. Bucket policies
+	. Access Control Lists
+3. Can turn on logging to see what users are doing. 
+	. To same bucket or different bucket
+Encryption
+	# 3 types
+	1. In Transit
+		SSL/TLS
+	2. AtRest
+		Server side encryption
+			S3 managed keys - SSE s3
+			AS256 bit to encrypt data
+		Server side encryption with KMS - SSE-KMS
+			Evenlop key
+			Audit Trial 
+		Service side encryption with customer provider keys - SSE-C
+
+		Client Side Encryption

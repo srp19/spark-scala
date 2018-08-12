@@ -1,0 +1,417 @@
+Categories
+
+Data Security83.33%
+Designing highly available, cost-efficient, fault-tolerant, scalable systems72.22%
+Implementation/Deployment66.67%
+Troubleshooting66.67%
+Congratulations! You have successfully cleared the this Quiz
+
+View questions
+123456789101112131415161718192021222324252627282930
+ Answered  Review
+1. Question
+How can you secure data at rest on an EBS volume?
+
+  Create an IAM policy that restricts read and write access to the volume.
+  Encrypt the volume using the S3 server-side encryption service.
+  Use an encrypted file system on top of the EBS volume.
+  Attach the volume to an instance using EC2’s SSL interface.
+Incorrect	
+Refer: http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html
+
+2. Question
+What is the type of monitoring data (for Amazon EBS volumes) available automatically in 5-minute periods at no charge called?
+
+  Licensed
+  Primary
+  Basic
+  Detailed
+Correct	
+Amazon Web Services (AWS) automatically provides data, such as Amazon CloudWatch metrics and volume status checks, that you can use to monitor your Amazon Elastic Block Store (Amazon EBS) volumes.
+CloudWatch metrics are statistical data that you can use to view, analyze, and set alarms on the operational behaviour of your volumes.
+Basic: Data is available automatically in 5-minute periods at no charge. This includes data for the root device volumes for EBS-backed instances.
+Detailed: Provisioned IOPS SSD (io1) volumes automatically send one-minute metrics to CloudWatch.
+
+Refer: http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html
+
+3. Question
+EC2 instances are launched from Amazon Machine images (AMIS). A given public AMI can:
+
+  only be used to launch EC2 instances in the same AWS availability zone as the AMI is stored
+  only be used to launch EC2 instances in the same AWS region as the AMI is stored.
+  only be used to launch EC2 instances in the same country as the AMI is stored
+  be used to launch EC2 Instances in any AWS region
+Correct	
+AMIs are a regional resource. Therefore, sharing an AMI makes it available in that region. To make an AMI available in a different region, copy the AMI to the region and then share it
+
+Refer: http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-explicit.html
+
+4. Question
+Which statements about DynamoDB are true? Choose 2 answers
+
+  DynamoDB restricts item access during writes
+  DynamoDB uses a pessimistic locking model
+  DynamoDB uses optimistic concurrency control
+  DynamoDB uses conditional writes for consistency
+  DynamoDB restricts item access during reads
+Incorrect	
+Conditional Writes
+
+In a multi-user environment, multiple clients can access the same item and attempt to modify its attribute values at the same time. However, each client might not realize that other clients might have modified the item already. To help clients coordinate writes to data items, DynamoDB supports conditional writes for PutItem, DeleteItem, and UpdateItemoperations.
+
+Optimistic concurrency control
+
+You can construct a free-form conditional expression that combines multiple conditional clauses, including nested clauses. Conditional operations allow users to implement optimistic concurrency control systems on DynamoDB.
+
+Refer: https://aws.amazon.com/dynamodb/faqs/
+
+5. Question
+What happens, by default, when one of the resources in a CloudFormation stack cannot be created?
+
+  Previously-created resources are deleted and the stack creation terminates.
+  The stack creation continues, and the final results indicate which steps failed.
+  CloudFormation templates are parsed in advance so stack creation is guaranteed to succeed.
+  Previously-created resources are kept but the stack creation terminates.
+Correct	
+By default, the “automatic rollback on error” feature is enabled. This will cause all AWS resources that AWS CloudFormation created successfully for a stack up to the point where an error occurred to be deleted. This is useful when, for example, you accidentally exceed your default limit of Elastic IP addresses, or you don’t have access to an EC2 AMI you’re trying to run. This feature enables you to rely on the fact that stacks are either fully created, or not at all, which simplifies system administration and layered solutions built on top of AWS CloudFormation.
+
+Refer: https://aws.amazon.com/cloudformation/faqs/
+
+ 
+
+6. Question
+What is the maximum number of S3 Buckets available per AWS account?
+
+  100 per IAM user
+  100 per account
+  100 per region
+  200 per region
+Correct	
+By default, customers can provision up to 100 buckets per AWS account. However, you can increase your Amazon S3 bucket limit by visiting AWS Service Limits.
+
+Refer: https://aws.amazon.com/s3/faqs/
+
+7. Question
+Which of the following statements about SQS is true?
+
+  Messages will be delivered exactly once and messages will be delivered in Last in, First out order
+  Messages will be delivered one or more times and message delivery order is indeterminate
+  Messages will be delivered exactly once and message delivery order is indeterminate
+  Messages will be delivered exactly once and messages will be delivered in First in, First out order
+Correct	
+Amazon SQS ensures delivery of each message at least once. Amazon SQS is engineered to always be available and deliver messages. One of the resulting trade-offs is that SQS does not guarantee first in, first out delivery of messages
+
+Refer: https://docs.aws.amazon.com/AWSSimpleQueueService/2009-02-01/SQSDeveloperGuide/index.html?IntroductionArticle.html
+
+8. Question
+Which of the following statements about SWF are true? Choose 3 answers
+
+  SWF tasks are assigned once and never duplicated
+  SWF requires an S3 bucket for workflow storage
+  SWF requires at least 1 EC2 instance per domain
+  SWF uses deciders and workers to complete tasks
+  SWF workflow executions can last up to a year
+  SWF triggers SNS notifications on task assignment
+Correct	
+Amazon SWF
+
+1. By implementing workers and deciders, you focus on your differentiated application logic as it pertains to performing the actual processing steps and coordinating them. Amazon SWF handles the underlying details such as storing tasks until they can be assigned, monitoring assigned tasks, and providing consistent information on their completion.
+
+2.Amazon SWF stores tasks, assigns them to workers when they are ready, and monitors their progress. It ensures that a task is assigned only once and is never duplicated
+
+3. Maximum workflow execution time – 1 year
+
+Refer: https://aws.amazon.com/swf/faqs/
+
+9. Question
+Which of the following are valid SNS delivery transports? Choose 3 answers
+
+  SMS
+  SQS
+  SOAP
+  UDP
+  Email
+Incorrect	
+Amazon SNS supports notifications over multiple transport protocols. Customers can select one the following transports as part of the subscription requests:
+
+•“HTTP”, “HTTPS” – Subscribers specify a URL as part of the subscription registration; notifications will be delivered through an HTTP POST to the specified URL.
+•”Email”, “Email-JSON” – Messages are sent to registered addresses as email. Email-JSON sends notifications as a JSON object, while Email sends text-based email.
+•“SQS” – Users can specify an SQS queue as the endpoint; Amazon SNS will enqueue a notification message to the specified queue (which subscribers can then process using SQS APIs such as ReceiveMessage, DeleteMessage, etc.)
+•“SMS” – Messages are sent to registered phone numbers as SMS text messages.
+
+Refer: https://aws.amazon.com/sns/faqs/
+
+10. Question
+How is Amazon SNS different from Amazon SQS? choose 2 answers
+
+  Amazon SNS allows applications to send time-critical messages to multiple subscribers through a “pull” mechanism
+  Amazon SQS is a message queue service used by distributed applications to exchange messages through a polling model, and can be used to decouple sending and receiving components
+  Amazon SNS allows applications to send time-critical messages to multiple subscribers through a “push” mechanism
+  Amazon SQS is a message queue service used by distributed applications to exchange messages through a push model, and can be used to decouple sending and receiving components
+  Amazon SQS provides flexibility for distributed components of applications to send and receive messages with requiring each component to be concurrently available.
+Correct	
+Amazon Simple Queue Service (SQS) and Amazon SNS are both messaging services within AWS, which provide different benefits for developers. Amazon SNS allows applications to send time-critical messages to multiple subscribers through a “push” mechanism, eliminating the need to periodically check or “poll” for updates. Amazon SQS is a message queue service used by distributed applications to exchange messages through a polling model, and can be used to decouple sending and receiving components. Amazon SQS provides flexibility for distributed components of applications to send and receive messages without requiring each component to be concurrently available.
+
+Refer: https://aws.amazon.com/sns/faqs/
+
+11. Question
+How can software determine the public and private IP addresses of the Amazon EC2 instance that it is running on?
+
+  Query the appropriate Amazon CloudWatch metric.
+  Use ipconfig or hostconfig command.
+  Query the local instance userdata
+  Query the local instance metadata
+Correct	
+Because your instance metadata is available from your running instance, you do not need to use the Amazon EC2 console or the AWS CLI. This can be helpful when you’re writing scripts to run from your instance. For example, you can access the local IP address of your instance from instance metadata to manage a connection to an external application.
+
+Refer: http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html
+
+12. Question
+Which of the following services are included at no additional cost with the use of the AWS platform? Choose 2 answers
+
+  Simple Workflow Service
+  CloudFormation
+  Simple Storage Service
+  Elastic Compute Cloud
+  Elastic Load Balancing
+  Auto Scaling
+Correct	
+CloudFormation Pricing: There is no additional charge for AWS CloudFormation. You pay for AWS resources (such as Amazon EC2 instances, Elastic Load Balancing load balancers, etc.) created using AWS CloudFormation in the same manner as if you created them manually. You only pay for what you use, as you use it; there are no minimum fees and no required upfront commitments.
+AutoScaling Pricing:
+Auto Scaling Pricing:  Auto Scaling is enabled by Amazon CloudWatch and carries no additional fees. Amazon EC2 and Amazon CloudWatch service fees apply and are billed separately. Partial hours are billed as full hours.
+
+Refer: https://aws.amazon.com/cloudformation/pricing/
+
+https://aws.amazon.com/autoscaling/pricing/
+
+13. Question
+Which of the following are correct statements with policy evaluation logic in AWS Identity and Access Management? Choose 2 answers
+
+  An explicit deny does not override an explicit allow
+  An explicit allow overrides an explicit deny Load Balancer
+  By default, all requests are denied
+  An explicit allow overrides default deny.
+  By default, all request are allowed
+Correct	
+When a request is made, the AWS service decides whether a given request should be allowed or denied. The evaluation logic follows these rules:
+• By default, all requests are denied. (In general, requests made using the account credentials for resources in the account are always allowed.)
+• An explicit allow overrides this default.
+• An explicit deny overrides any allows.
+
+Refer: http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html
+
+14. Question
+Regarding the attaching of ENI to an instance, what does ‘hot attach’ refer to?
+
+  Attaching an ENI to an instance when it is running
+  Attaching an ENI to an instance when it is starting
+  Attaching an ENI to an instance during the launch process
+  Attaching an ENI to an instance when it is stopped.
+Correct	
+You can attach an elastic network interface to an instance when it’s running (hot attach), when it’s stopped (warm attach), or when the instance is being launched (cold attach).
+
+Refer: http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html
+
+15. Question
+You have written an application that uses the Elastic Load Balancing service to spread traffic to several web servers. Your users complain that they are sometimes forced to login again in the middle of using your application, after they have already logged in. This is not behaviour you have designed. What is a possible solution to prevent this happening?
+
+  Use instance memory to save session state.
+  Use ElastiCache to save session state.
+  Use instance storage to save session state.
+  Use EBS to save session state
+  Use Glacier to save session slate.
+Correct	
+Amazon ElastiCache is a web service that makes it easy to deploy and run Memcached or Redis protocol-compliant server nodes in the cloud. Amazon ElastiCache improves the performance of web applications by allowing you to retrieve information from a fast, managed, in-memory system, instead of relying entirely on slower disk-based databases. The service simplifies and offloads the management, monitoring and operation of in-memory environments, enabling your engineering resources to focus on developing applications. Using Amazon ElastiCache, you can not only improve load and response times to user actions and queries, but also reduce the cost associated with scaling web applications.
+
+Refer: https://aws.amazon.com/elasticache/faqs/
+
+16. Question
+If a message is retrieved from a queue in Amazon SQS, how long is the message inaccessible to other users by default?
+
+  60 Seconds
+  45 Seconds
+  30 Seconds
+  2 hours
+Correct	
+Each queue starts with a default setting of 30 seconds for the visibility timeout. You can change that setting for the entire queue. Typically, you’ll set the visibility timeout to the average time it takes to process and delete a message from the queue. When receiving messages, you can also set a special visibility timeout for the returned messages without changing the overall queue timeout.
+
+Refer: http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html
+
+17. Question
+Company A has a S3 bucket containing premier content that they intend to make available to only paid subscribers of their website. The S3 bucket currently has default permissions of all objects being private to prevent inadvertent exposure of the premier content to non-paying website visitors. How can Company A provide only paid subscribers the ability to download a premier content file in the S3 bucket?
+
+  Generate a pre-signed object URL for the premier content file when a paid subscriber requests a download
+  Add a bucket policy that requires Multi-Factor Authentication for requests to access the S3 bucket objects
+  Apply a bucket policy that grants anonymous users to download the content from the S3 bucket
+  Enable server side encryption on the S3 bucket for data protection against the non-paying website visitors
+Correct	
+All objects by default are private. Only the object owner has permission to access these objects. However, the object owner can optionally share objects with others by creating a pre-signed URL, using their own security credentials, to grant time-limited permission to download the objects. When you create a pre-signed URL for your object, you must provide your security credentials, specify a bucket name, an object key, specify the HTTP method (GET to download the object) and expiration date and time. The pre-signed URLs are valid only for the specified duration. Anyone who receives the pre-signed URL can then access the object. For example, if you have a video in your bucket and both the bucket and the object are private, you can share the video with others by generating a pre-signed URL.
+
+Refer: http://docs.aws.amazon.com/AmazonS3/latest/dev/ShareObjectPreSignedURL.html
+
+18. Question
+A company has an AWS account that contains three VPCs (Dev, Test, and Prod) in the same region. Test is peered to both Prod and Dev. All VPCs have non overlapping CIDR blocks. The company wants to push minor code releases from Dev to Prod to speed up time to market. Which of the following options helps the company accomplish this?
+
+  Create a new entry to Prod in the Dev route table using the peering connection as the target.
+  Attach a second gateway to Dev. Add a new entry in the Prod route table identifying the gateway as the target.
+  The VPCs have non-overlapping CIDR blocks in the same account. The route tables contain local routes for all VPCs.
+  Create a new peering connection Between Prod and Dev along with appropriate routes.
+Correct	
+A VPC peering connection is a one to one relationship between two VPCs. You can create multiple VPC peering connections for each VPC that you own, but transitive peering relationships are not supported: you do not have any peering relationship with VPCs that your VPC is not directly peered with. There are two VPC peering connections: VPC A is peered with both VPC B and VPC C. VPC B and VPC C are not peered, and you cannot use VPC A as a transit point for peering between VPC B and VPC C. If you want to enable routing of traffic between VPC B and VPC C, you must create a unique VPC peering connection between them.
+
+Refer: http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/vpc-peering-basics.html
+
+19. Question
+A user has enabled termination protection on an EC2 instance. The user has also set Instance initiated shutdown behaviour to terminate. When the user shuts down the instance from the OS, what will happen?
+
+  The OS will shutdown but the instance will not be terminated due to protection
+  It will terminate the instance
+  It is not possible to set the termination protection when an Instance initiated shutdown is set to Terminate
+  It will not allow the user to shutdown the instance from the OS
+Incorrect	
+Enabling Termination Protection for an Instance
+
+By default, you can terminate your instance using the Amazon EC2 console, command line interface, or API. If you want to prevent your instance from being accidentally terminated using Amazon EC2, you can enable termination protection for the instance. The DisableApiTermination attribute controls whether the instance can be terminated using the console, CLI, or API. By default, termination protection is disabled for your instance. You can set the value of this attribute when you launch the instance, while the instance is running, or while the instance is stopped (for Amazon EBS-backed instances).
+
+The DisableApiTermination attribute does not prevent you from terminating an instance by initiating shutdown from the instance (using an operating system command for system shutdown) when the InstanceInitiatedShutdownBehavior attribute is set
+
+Refer: http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#Using_ChangingDisableAPITermination
+
+20. Question
+Which of the following approaches provides the lowest cost for Amazon Elastic Block Store snapshots while giving you the ability to fully restore data?
+
+  Maintain two snapshots: the original snapshot and the latest incremental snapshot.
+  Maintain a volume snapshot; subsequent snapshots will overwrite one another
+  Maintain a single snapshot the latest snapshot is both Incremental and complete.
+  Maintain the most current snapshot, archive the original and incremental to Amazon Glacier.
+Incorrect	
+If you make periodic snapshots of a volume, the snapshots are incremental so that only the blocks on the device that have changed since your last snapshot are saved in the new snapshot. Even though snapshots are saved incrementally, the snapshot deletion process is designed so that you need to retain only the most recent snapshot in order to restore the volume.
+
+Refer: http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-snapshot.html
+
+21. Question
+Which of the following statements are true about Amazon Route 53 resource records? Choose 2 answers
+
+  A CNAME record can be created for your zone apex.
+  An Amazon Route 53 CNAME record can point to any DNS record hosted anywhere.
+  An Alias record can map one DNS name to another Amazon Route 53 DNS name.
+  TTL can be set for an Alias record in Amazon Route 53.
+  An Amazon Route 53 Alias record can point to any DNS record hosted anywhere.
+  Use SSL to encrypt the data while in transit to Amazon S3.
+Incorrect	
+Amazon Route 53 offers ‘Alias’ records (an Amazon Route 53-specific virtual record). Alias records are used to map resource record sets in your hosted zone to Amazon Elastic Load Balancing load balancers, Amazon CloudFront distributions, AWS Elastic Beanstalk environments, or Amazon S3 buckets that are configured as websites. Alias records work like a CNAME record in that you can map one DNS name (example.com) to another ‘target’ DNS name (elb1234.elb.amazonaws.com). They differ from a CNAME record in that they are not visible to resolvers. Resolvers only see the A record and the resulting IP address of the target record.
+
+Refer: https://aws.amazon.com/route53/faqs/
+
+22. Question
+A company is deploying a new two-tier web application in AWS. The company has limited staff and requires high availability, and the application requires complex queries and table joins. Which configuration provides the solution for the company’s requirements?
+
+  Amazon RDS for MySQL with Multi-AZ
+  Amazon ElastiCache
+  Amazon DynamoDB
+  MySQL Installed on two Amazon EC2 Instances in a single Availability Zone
+Correct	
+RDS Multi AZ deployment as application requires complex queries and table joins with high availability
+
+Refer: http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html
+
+23. Question
+When will you incur costs with an Elastic IP address (EIP)?
+
+  When an EIP is allocated
+  When it is allocated and associated with a running instance
+  When it is allocated and associated with a stopped instance
+  Costs are incurred regardless of whether the EIP is associated with a running instance
+Incorrect	
+To ensure efficient use of Elastic IP addresses, we impose a small hourly charge if an Elastic IP address is not associated with a running instance, or if it is associated with a stopped instance or an unattached network interface. While your instance is running, you are not charged for one Elastic IP address associated with the instance, but you are charged for any additional Elastic IP addresses associated with the instance.
+
+Refer: http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html
+
+24. Question
+You are deploying an application to collect votes for a very popular television show. Millions of users will submit votes using mobile devices. The votes must be collected into a durable, scalable, and highly available data store for real-time public tabulation. Which service should you use?
+
+  Amazon DynamoDB
+  Amazon Redshift
+  Amazon Simple Queue Service
+  Amazon Kinesis
+Incorrect	
+Amazon Kinesis Streams enables you to build custom applications that process or analyze streaming data for specialized needs. Amazon Kinesis Streams can continuously capture and store terabytes of data per hour from hundreds of thousands of sources such as website clickstreams, financial transactions, social media feeds, IT logs, and location-tracking events. With Amazon Kinesis Client Library (KCL), you can build Amazon Kinesis Applications and use streaming data to power real-time dashboards, generate alerts, implement dynamic pricing and advertising, and more
+
+Refer:  https://aws.amazon.com/kinesis/streams/
+
+25. Question
+A customer is hosting their company website on a cluster of web servers that are behind a public-facing load balancer. The customer also uses Amazon Route 53 to manage their public DNS. How should the customer configure the DNS zone apex record to point to the load balancer?
+
+  Create a CNAME record pointing to the load balancer DNS name.
+  Create an A record pointing to the IP address of the load balancer
+  Create a CNAME record aliased to the load balancer DNS name.
+  Create an A record aliased to the load balancer DNS name
+Correct	
+Choose Alias record over CNAME record. You can’t point an A record to the IP address of the ELB, because ELB’s don’t have predefined IP addresses
+
+Refer: http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-choosing-alias-non-alias.html
+
+26. Question
+Which of the following services natively encrypts data at rest within an AWS region? Choose 2 answers
+
+  Amazon Glacier
+  AWS Storage Gateway
+  Amazon DynamoDB
+  Amazon Simple Queue Service
+  Amazon CloudFront
+Correct	
+1.AWS Storage Gateway, by default, uploads data using SSL and provides data encryption at rest when stored in S3 or Glacier using AES-256.
+
+Refer: https://aws.amazon.com/storagegateway/faqs/
+
+2.Data stored in Amazon Glacier is protected by default; only vault owners have access to the Amazon Glacier resources they create. Amazon Glacier encrypts your data at rest by default and supports secure data transit with SSL
+
+Refer: https://aws.amazon.com/glacier/faqs/
+
+27. Question
+________________ , also known as master-slave deployments, are a good option for applications with a high read to write ratio. In this architecture, a single master database is responsible for handling all writes. The writes are then replicated to the slaves which are designated to handle just reads.
+
+  Scale Compute
+  Vertical Scaling Up
+  Scale Storage
+  Read Replicas
+Correct	
+Read Replicas , also known as master-slave deployments, are a good option for applications with a high read to write ratio
+
+Refer: https://aws.amazon.com/rds/faqs/
+
+28. Question
+If I want to run a database in an Amazon instance, which is the most recommended Amazon storage option?
+
+  Amazon Instance Storage
+  Amazon EBS
+  Amazon Glacier
+  Amazon S3
+Correct	
+Amazon EBS is recommended when data must be quickly accessible and requires long-term persistence. EBS volumes are particularly well-suited for use as the primary storage for file systems, databases, or for any applications that require fine granular updates and access to raw, unformatted, block-level storage. Amazon EBS is well suited to both database-style applications that rely on random reads and writes, and to throughput-intensive applications that perform long, continuous reads and writes.
+
+Refer: http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html
+
+29. Question
+You have an environment that consists of a public subnet using Amazon VPC and 3 instances that are running in this subnet. These three instances can successfully communicate with other hosts on the Internet. You launch a fourth instance in the same subnet, using the same AMI and security group configuration you used for the others, but find that this instance cannot be accessed from the Internet. What should you do to enable internet access?
+
+  Modify the routing table for the public subnet
+  Deploy a NAT instance into the public subnet.
+  Configure a publically routable IP Address In the host OS of the fourth instance.
+  Assign an Elastic IP address to the fourth instance.
+Correct	
+Using an Elastic IP address (EIP) enables an instance in a VPC, which is otherwise private, to be reached from the Internet through an Internet gateway (for example, it could act as a web server).
+
+Refer:http://docs.aws.amazon.com/AmazonVPC/latest/GettingStartedGuide/ExerciseOverview.html
+
+30. Question
+What is RDS Automatic Host Replacement?
+
+  Automatically replace the compute instance powering your deployment in the event of a hardware failure.
+  Synchronously replicates your data to a standby instance in a different Availability Zone (AZ).
+  Multi-AZ deployments provide enhanced availability and durability for database instances, making them a natural fit for production database workloads
+  Backup your database and transaction logs and store both for a user-specified retention period
+Correct	
+Automatic Host Replacement – Amazon RDS will automatically replace the compute instance powering your deployment in the event of a hardware failure.
+
+Refer: https://aws.amazon.com/rds/sqlserver/

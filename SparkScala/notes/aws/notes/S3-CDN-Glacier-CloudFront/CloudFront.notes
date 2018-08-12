@@ -1,0 +1,32 @@
+CloudFront:
+
+1. CDN:
+	Content Delivery Network
+	System of Distributed Servers that deliver content based on geographic location of the user and server. 
+
+2. CloudFront:
+	Edge Location - where content will be cached. currently 50. 
+	Origin - where original files are. s3 bucket or EC2 instance or Elastic Load Balancer or Route53. 
+	Distribution - collection of edge locations. 
+		Distribution url is given to user
+		user is trying to play a video file, edge location does not 
+		have the video, so it pulls it down to local edge location 
+		and caches it based on TTL. 
+	!Two types of distributions.
+		1. Web Distribution - for websites
+		2. RTMP for media streaming. adobe flash media.
+
+!Edge locations are not jus READ only. you can write to them too. 
+#Objects are cached for the life of the TTL.
+!You can clear cached objects, but you will be charged. 
+
+Origin Domain Name - s3 bucket or ec2 etc.. 
+Origin path - multiple origins to distribution.
+Default TTL : 86400 seconds - 24 hours
+Restrict Viewer Access - Signed urls
+WAF - Web Applicaton Firewall 
+	
+
+
+
+	

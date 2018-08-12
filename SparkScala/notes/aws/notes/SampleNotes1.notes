@@ -1,0 +1,169 @@
+--- Some Title ---
+Header Here:
+1. ordered (emphasis on parens) // comments
+2. list 	"as should these", 'and these', "and *maybe* also 'these' too..."
+3. arrows ---> asdf <-- asdf ==> asdfasf --> a
+	1. ordered with dot
+	2) ordered with paren
+	3.) ordered with both
+! super important
+- also !inline super important! and !!! multiple !!! bangs
+
+Not a header...
+Supports urls like www.urls.com
+- even with protocols: https://www.somesite.com, POP3://some.pop3.site
+
+Another header:
+- unordered
+- list
+	- with
+	- sublists
+		1. mix
+		2. and
+		3. match
+	- of
+		a. any
+		b. kind
+	- including
+		i.	these
+		ii. things
+	- and
+		. each bullet type
+		. should be *clear*
+		. vocab: definitions should be supported (like this)
+
+vocab: and its definition
+two word: and its definition
+longer vocab word-sequence: and its definition
+
+# Highlights
+## Another highlight
+And # embedded highlights # as well
+But also *different* highlights
+
+-----------------------------------------
+		Dividers are very cool
+-----------------------------------------
+
+----------- These too -----------------
+
+---=== And things like this ===---
+
+Title: // this is a comment
+- draw attention to <important> things
+
+Syntax injection for all major languages:
+[php]
+<?php
+	function random_color(){
+	    mt_srand((double)microtime()*1000000);
+	    $c = '';
+	    while(strlen($c)<6){
+	        $c .= sprintf("%02X", mt_rand(0, 255));
+	    }
+	    return $c;
+	}
+?>
+[end]
+
+[html]
+	<h1 sytle="font-size:2em;">and inline syntax highlighting</h1>
+	<script type="javascript">
+		window.foo = bar;
+	</script>
+[end]
+
+[js]
+	(function (a, b) {
+		return {of.all = {major: 'languages'}
+	})(alpha, beta);
+[\js]
+
+[python]
+	class myLogger:
+	    def __init__(self):
+	        pass
+	    def write(self,data):
+	        file = open("mylog.txt","a")
+	        file.write(data)
+	        file.close()
+[/python]
+
+[c]
+	int gcd(int a, int b)
+	{
+	    if (b == 0) return a;
+	    return gcd(b, a%b);
+	}
+[end]
+
+[c++]
+	int gcd(int a, int b)
+	{
+	    if (b == 0) return a;
+	    return gcd(b, a%b);
+	}
+[end]
+
+[ruby]
+	# Place the array in a random order.  Floyd's alg.
+	def shuffle(arr)
+	    for n in 0...arr.size
+	        targ = n + rand(arr.size - n)
+	        arr[n], arr[targ] = arr[targ], arr[n] if n != targ
+	    end
+	end
+[end]
+
+[c#]
+	using (ServiceContext svcContext = new ServiceContext(_serviceProxy))
+	{
+	 var query_where1 = from a in svcContext.AccountSet
+	                    where a.Name.Contains("Contoso")
+	                    select a;
+	 foreach (var a in query_where1)
+	 {
+	  System.Console.WriteLine(a.Name + " " + a.Address1_City);
+	 }
+	}
+[end]
+
+Supported languages for snippets
+
+Actionscript
+Applescript
+ASP
+C
+C++
+C#
+Clojure
+CSS
+D
+Erlang
+Go
+Groovy
+Haskell
+HTML
+Java
+Javascript
+Lua
+Makefile
+Markdown
+Matlab
+Objective-C
+Ocaml
+Pascal
+Perl
+PHP
+Python
+R
+Regex
+Ruby
+Scala
+Shell
+SQL
+TCL
+TeX
+XML
+XSL
+YAML

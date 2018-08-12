@@ -1,0 +1,176 @@
+-----------------------------------------------------------
+    DNS
+-----------------------------------------------------------
+	!Domain Name Server
+	Phone book for internet.
+	Translates website names to IP addresses. 
+	A globally distributed, scalable, reliable database made up of large network of computers. 
+	Find google.com - Convert human friendly name to ip address. 
+	2 types of IP Address: v4 and v6. 32 bit vs 128 bit. 
+	Support is not good at this moment. v6 cannot be assigned to EC2 and also cannot be assigned in VPC. 
+
+	!Request Flow
+	# Client (www.srp.com) queries-> ISP's DNS Resolver(Resolver job is to take queries) -> Ask Root Name Server
+	# Root name server is a set of named servers only knows about .com, .net etc.. 
+	# It asks name server where is www.srp.com
+	# It does not know about www.srp.com but knows about srp.com
+	# It forwards pointer to DNS provider like Route53 or GoDaddy.com
+	# Route53 contains a hosted zone which is container that contains all individual records
+	# like www.srp.com, visit.srp.com etc.. 
+	# Route53 returns an IP address to DNS Resolver and is sent to client. 
+	(pic:DNSResolution.png)
+
+	!DNS for a website in Route53
+	1. Register a domain name. (srp.com)
+	2. Create a hosted zone. (if registered in Route53, hosted zone is created for you. if not
+			you have to create a new hosted zone)
+	   Hosted zone has NS records and SOA.
+	3. In hosted zone, create DNS records (A, CNAME, Alias) that point traffic to several resources.
+	4. Delegate to Route53. (connect domain name to hosted zone. update registrar with correct name servers.)
+
+	DNS Comprised of 3 components
+	1. A "name space".
+	2. Servers making that namespace available.
+	3. Resolvers (clients) which query the servers about the name space. 
+
+	2 types of servers
+	1. Primary Server
+		1. holds master copy of the data for a zone. 
+		2. notifies secondary server of changes - notify request
+		3. responds to queries from secondary server.
+	2. Secondary Server
+		1. have copies of the primary DNS data synchronized through zone transfers
+		2. when prompted, or at intervals query primary servers for 
+		DNS records changes (redundancy)
+		3. any changes done to primary servers is copied through zone transfers. 
+
+	!DNS Resolution
+	The process of translating website name to IP Address. 
+	Root server is asked about the domain name that needs to resolved. 
+	If it doesn't know, it will contact another name server until it finds the authoritative server responsible 
+	for the domain.  Authoritative server responds with cachable info for the browser to process. 
+
+	!DNS Delegation
+	Process of distributing  the namespace into more zones. Used traffic distribution. DNS peformance resolution. 
+	fault tolerance. adding new branches. locations. 
+
+	!Forward & Reverse DNS resolutions
+	Name in to IP = forward resolution
+	IP in to Name = reverse resolution
+
+	!DNS server make up
+	Client Server (pc) -> Root Server (Top level domain hierarchy; contacts others) -> Recursive Servers (DNS info
+		from resolvers queries multiple servers;) -> Authoritative Servers (Server in charge of a given zone; 
+		has domain registration records)
+
+
+	!Resolution and Domain Name Hierarchy
+	1. Root zone
+	2. Top Level Domain Name(TLD). .com, .edu etc.. IANA.org
+	3. Second Level Domain Name (2LD). .co.in etc.. 
+
+	!Recod Types
+	1. DNS record - single entry that gives the ZONE instructions
+		DNS record consists of Record Name, Record Value, Time to Live(TTL)
+	2. DNS Zone
+		A container of all the DNS records for a specific domain. 
+			example: 
+			www.visit.srp.com
+			blog.visit.srp.com
+			visit.srp.comm
+			mail.visit.srp.com
+			->
+			DNS records that make up
+			->
+			DNS ZONE
+	3. Blank Name
+		Record that has nothing in the name slot
+		srp.com -> No data for record type.
+		vs
+		www.srp.com -> has www as its record name. 
+	4. A Record
+		Used to point a domain or subdomain to an IP address
+		Point one domain to multiple IP addresses (redundancy/load balancing/performance)
+	5. CNAME
+		DNS entry used to point a host name to host name. 
+		Allows changes to IP address of a server, or cluster of servers without making DNS changes
+		docs.srp.com and documents.srp.como access same files.
+	6. MX Records
+		Used to route email according to owner's preferences
+		Allows you to specify multiple mail servers to be used
+	7. NS Records
+		Name Server(NS) records identify the name servers that are authoritative for the DNS zone.
+	8. SPF Records
+		Open standard created to prevent address forgery.
+	9. TTL
+		Total value in seconds how the DNS record will be cached before it needs to be refreshed. 
+		A queried Name Server will check TTL to see how long before it has to refresh, and 
+		if the DNS record was delivered on time. 
+	10. Record Value
+		The data value that tells DNS record where you want it to point. 
+
+	!Domain Registrar: WhoIs Database
+	# A registrar is an authority that can assign domain names directly under one or more top level domains. 
+	# These domains are registerd with Internic service of ICANN which enforces uniquness. 
+	# Popular: GoDaddy.com
+
+	!SOA State of Authority Record 
+	Stores information about (Parameters for the zone).
+	1. name of the server that supplied data for the zone
+	2. administrator of the zone
+	3. current version of data file
+	4. no of seconds secondary name server shoud wait before checking updates. 
+	5. no of seconds for the time-to-live file on resource records.
+
+	!NS Records: Name Server Records
+	# NS - Name Server Records are used by Top Level Domain Servers to direct traffic to the 
+	# content DNS server which contains authoritative DNS records. 
+	*NS records should be updated in GoDaddy*
+	*When hosted zone is created NS Records and SOA are created automatically*
+
+	!A Record is the fundamental type of DNS record and A stands for Address.  
+	# The A record is used by the computer to translate the name of the domain to IP Address.  
+	# Used to point domain or sub domain to an IP addresss. 
+
+	!TTL Record
+	# Time to Live. PC is going to check if address exists in cache? Length of time is time to live. 
+	# Lower the TTL, faster the change to DNS
+
+	!CNAME - A Canonical Name
+	# Can be used to resolve one domain name to another. example: m.srp.com and mobile.srp.com resolve to same address. 
+	# DNS entry used to point host name to host name. 
+	# Allows changes to the IP address of a server, or cluster of servers without making DNS changes.  
+
+	!Alias Records
+	# Used to map resource record sets in your hosted zone to Elastic Load Balancers,
+	# Cloud Front Distributions or s3
+	# buckets that are configured as websites. 
+
+		Alias reords work like a CNAME record in that you can map one DNS name(www.srp.com) to another target DNS name 
+		(elb134.elb.amazonaws.com). 
+
+		!Key Difference: A CNAME can't be used for naked domain names(zone apex - no www at front).
+		# You can't have a CNAME for http://srp.com, it must be either an A record or an Alias.
+		!Named domain name means a domain name withoud www. 
+
+	!IMPORTANT
+		*ELBs do not have predefined IPvfour addresses you resolve them using a DNS name*
+		# Alias records 
+		! CNAME will be charged but not Alias Records. 
+-----------------------------------------------------------
+	Route 53 Routing Policies
+-----------------------------------------------------------
+	1. Simple. Single Resource. 
+	2. Weighted. Split your traffic based on Weight. Percentage of Traffic.  
+	3. Latency. Route based on Low Latency. 
+	4. Failover. Active and passive. Based on Health Check. 
+	5. Geolocation. Based on location. 
+-----------------------------------------------------------
+    Research
+-----------------------------------------------------------
+	http://www.slideshare.net/romanwlodarski/dns-http-overview
+	https://www.youtube.com/watch?v=AAq-DDbFiIE&feature=youtu.be
+	https://aws.amazon.com/route53/faqs/
+	
+
+
