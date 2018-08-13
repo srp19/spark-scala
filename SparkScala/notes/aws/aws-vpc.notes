@@ -1,0 +1,18 @@
+----------
+#aws-vpc quick notes
+-----------
+
+Security Groups and NACLs:
+
+
+
+
+
+
+
+[bash]
+sudo su httpd config 
+chkconfig 
+ls
+
+[bash]

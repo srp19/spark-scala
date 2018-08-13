@@ -1,0 +1,14 @@
+-----------------------------------------------------------
+    SQS
+-----------------------------------------------------------
+	#Simple Queue Service
+	Web service that gives access to a message queue that can be used to 
+	store messages while waiting for the computer to porcess them. 
+
+	#It is a distributed queue system. 
+	Amazon Simple Queue Service (Amazon SQS) offers a fast, reliable and scalable queues for storing messages. By using Amazon SQS, you can move data between distributed components of your applications that perform different tasks without losing messages or requiring each component to be always available.
+
+	A queue is a temporary repository for messages that are awaiting processing. The queue acts as a buffer between the component producing and saving data, and the component receiving the data for processing. This means the queue resolves issues that arise if the producer is producing work faster than the consumer can process it, or if the producer or consumer are only intermittently connected to the network. SQS ensures delivery of each message at least once, and supports multiple readers and writers interacting with the same queue. A single queue can be used simultaneously by many distributed application components, with no need for those components to coordinate with each other to share the queue.
+
+	#If application server lost, other application servers can do that task
+	

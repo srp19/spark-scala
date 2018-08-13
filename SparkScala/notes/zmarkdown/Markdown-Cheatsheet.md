@@ -22,7 +22,7 @@ Note that there is also a [Cheatsheet specific to Markdown Here](./Markdown-Here
 
 ```no-highlight
 # H1
-## H2
+## H2 
 ### H3
 #### H4
 ##### H5
@@ -121,7 +121,7 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 
 ## Links
 
-There are two ways to create links.
+There are two **ways** to create links.
 
 ```no-highlight
 [I'm an inline-style link](https://www.google.com)

@@ -10,7 +10,6 @@
    *. RAM
    *. Disk Drive (only supports write tests).
 
-
    
    ```bash
    apt-get install stress

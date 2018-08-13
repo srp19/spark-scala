@@ -1,0 +1,64 @@
+-----------------------------------------------------------
+    Architecture
+-----------------------------------------------------------
+	#draw.io
+	users->route 53 & cloud front (s3)-> ELB -> two security groups -> 
+		EC2 instances -> Auto scaling groups
+
+	1. IAM 
+		create a role (s3role) - policy s3 full access
+		Use default VPC 
+	2. Security Groups
+		create two security groups in the default vpc 
+		web-dmz (inbound 80 and 22)
+		rds-security (inbound mysql 3306)
+	3. S3
+		*two buckets*
+		one bucket for all the code - region same as security groups
+		second one for media
+
+		#CDN for the bucket
+		3.1 Cloudfront
+		create a new web distribution
+			origin domain - s3 media bucket created above
+			restrict bucket access - access to s3 content using cloudfront urls
+
+			grant read permission on bucket - yes
+			if anything is put in to that bucket you always have read
+			permissions to public.
+	4. RDS instances
+		MySQL
+		multi az
+		rdssecuritygroup
+	5. Load Balancer
+		web-dmz security group
+	6. Route 53
+		create a record set
+		zone apex record - alias record 
+	7. EC2 instance
+		assign s3 role
+		bootstrap script
+		[bash]
+		#!/bin/bash (sha bang)
+		yum update -y
+		yum install httpd php php-mysql stress -y
+		cd /etc/httpd/conf
+
+		service httpd start
+		chkconfig httpd start
+		aws s3 cp  
+		[end]
+	8. Autoscaling & Load Testing
+		Launch Configuration
+			Custom AMI
+			Apply S3 Role - Enable to access code
+			run bash script
+			#!/bin/bash
+			aws s3 cp 
+
+
+
+
+
+
+

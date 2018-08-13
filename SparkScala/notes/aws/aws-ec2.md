@@ -5,15 +5,15 @@
 * Amazon Elastic compute cloud is a web service that provides resizeable compute capacity in the cloud. EC2 reduces the time required to obtain and boot new server instance to minutes, allowing you to quickly scale capacity up and down, as your computing requirements change.
 
 * EC2 Options :
-  * On Demand : Allows you to fix rate per hour with no commitments.
-   Use Case - To be used where you do not want to pay upfront or make a long term commitment. Applications with short term spiky or unpredictable workloads that cannot be interrupted. These can be your dev or test environments or applications that are being tested on the AWS for the first time.
-   A scenario could be where we need to suppliment our reserved instances say for 24-72 hours. An example could be a Black friday and Cyber Monday sale coming up where you know there could be 200% rise in traffic and you need additonal capacity for those 72 hours to cater to the additonal load. Once the sale is over you go ahead and terminate the instances.
+  * **On Demand** : Allows you to fix rate per hour with no commitments.
+   * Use Case - To be used where you do not want to pay upfront or make a long term commitment. Applications with short term spiky or unpredictable workloads that cannot be interrupted. These can be your dev or test environments or applications that are being tested on the AWS for the first time.
+   * A scenario could be where we need to suppliment our reserved instances say for 24-72 hours. An example could be a Black friday and Cyber Monday sale coming up where you know there could be 200% rise in traffic and you need additonal capacity for those 72 hours to cater to the additonal load. Once the sale is over you go ahead and terminate the instances.
 
-  * Reserved : Provides you with a capacity reservation, and offers a significant discount on the hourly charge for an instance. 1 Year or 3 Year Terms
-   Use Case -  Where applications have a steady state, reserved instances can be used. 
-  * Spot Instances : Enables you to bid what ever price you want for the Instance capacity, providing for even grater savings if your applications have flexible start and end times.
-   Use Case - Genomics or research companies use sopt instances to do a large amount of compute in short amount of time. If you are asked what is commercially feasible always go for spot instanes.
-   If a spot instance is terminated by Amazon EC2, you will not be charged for partial hour of usage. However if you terminate the instance by yourself you will be charged for the hour in which the instance ran.
+  * **Reserved** : Provides you with a capacity reservation, and offers a significant discount on the hourly charge for an instance. 1 Year or 3 Year Terms
+   * Use Case -  Where applications have a steady state, reserved instances can be used. 
+  * **Spot Instances** : Enables you to bid what ever price you want for the Instance capacity, providing for even grater savings if your applications have flexible start and end times.
+   * Use Case - Genomics or research companies use sopt instances to do a large amount of compute in short amount of time. If you are asked what is commercially feasible always go for spot instanes.
+   * If a spot instance is terminated by Amazon EC2, you will not be charged for partial hour of usage. However if you terminate the instance by yourself you will be charged for the hour in which the instance ran.
 
 ### EC2 instance types
 

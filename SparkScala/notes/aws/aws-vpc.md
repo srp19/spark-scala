@@ -1,33 +1,35 @@
 # VPC
 
-## Section 8, Lecture 64 (Introduction and Overview)
+## Introduction and Overview
 
-Amazon Virtual Private cloud lets your proivison logically isolated section of the Amazon Web Services cloud 
-where you can launch AWS services in a virtual network that you define. You have complete control over your virtual networking environment,
+**Amazon Virtual Private cloud lets your proivison logically isolated section of the Amazon Web Services cloud where you can launch AWS services in a virtual network that you define.**
+
+You have complete control over your virtual networking environment,
 including selection of your own ip address range, creation of subnets and configuration of route tables and network gateways.
 
 * RFC 1918 defines 3 private ip address network ranges for use throughout the world
  * 10.0.0.0 - 10.255.255.255 (10/8 prefix)
  * 172.16.0.0  - 172.31.255.255 (172.16/12 prefix)
  * 192.168.0.0 - 192.168.255.255 (192.168/24 prefix)
+  
  Out of which 10.0.0.0 is the largest octet and privdes you with most nummber of ip addresses. But when using VPC AWS allows you to use the 
  largest network size of 10.0.0.0/16 CIDR block
 
 ![Virtual Private Cloud](./images/aws-vpc.jpg)
 
-* Network ACLs and security groups can span over subnets.
+>**notes**
+
+* `Network ACLs and security groups can span over subnets`.
 * 1 subnet can span only one availability zone.
-* Subnets can be either public or private. You can assign custom IP address ranges in each subnet.
-* You can configure route tables betwee subnets. And those route tables will define whether or not a subnet is 
-going to be public or private.
+* >Subnets can be either public or private. You can assign custom IP address ranges in each subnet.
+* _You can configure route tables betwee subnets. And those route tables will define whether or not a subnet is going to be public or private_.
 * Yo can create an internet Gateway and attach it to your VPC. We can have only one internet Gateway per VPC.
-* Instance security groups are stateful. When you allow http into your security group be default http is allowed out of your security group.
-* Subnet Access control Lists are stateless. If you make a rule to allow http into your subnet you also have to create a rule to allow 
-http out of your subnet.
+* *Instance security groups are stateful. When you allow http into your security group be default http is allowed out of your security group.*
+* <u>Subnet Access control Lists are stateless. If you make a rule to allow http into your subnet you also have to create a rule to allow http out of your subnet.</u>
 
 ### Default VPC vs Custom VPC.
 
-* Default VPC
+>Default VPC
  * Default VPC is user friendly, allowing you to immediately deploy instances
  * All subnets in default VPC have a route out to the internet
  * Each instance has both public and private IP address
@@ -40,7 +42,7 @@ http out of your subnet.
 * You can peer VPCs with other AWS accounts as well as with other VPC's in the same account
 * Peering is always done in a star configuration, ie 1 central VPC peers with 4 others. You cannot do transitive peering.
 
-## Section 8, Lecture 65 (Build your own custom VPC)
+## Build your own custom VPC
 
 * When we craate a VPC it aws doesn't automatically create a subnet, intetnet gateways but automatically creates route table, network acls 
 and security groups.
@@ -56,12 +58,11 @@ Due to the following for a 10.0.0.0/24 subnet.
  
  ![Virtual Private Cloud Lab summary](./images/aws-vpc-diag.jpg)
  
-## Section 8, Lecture 66 (Build your own custom VPC Part 2)
+## Build your own custom VPC Part 2
 
 Privisioning an instance into private subnet and accessing it through an instance in public subnet.
 
-## Section 8, Lecture 67 (Network Address Translation)
-
+## Network Address Translation)
 NAT instance vs NAT Gateway (http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-comparison.html)
 
 * NAT Instance
@@ -78,18 +79,31 @@ NAT instance vs NAT Gateway (http://docs.aws.amazon.com/AmazonVPC/latest/UserGui
   * No need to assign them with security groups.
   * Once NAT gateway is created, associate them with private subnet.
 
-## Section 8, Lecture 67 (Network Access Control Lists Vs Security groups)
+#### Section 8, Lecture 67 (Network Access Control Lists Vs Security groups)
 
-* Network ACL's
+![](images/2018-08-12-16-15-13.png)
+
+>**Network ACL's**
   * With your VPC comes a default Network ACL and by default it allows all outbound and in bound traffic.
   * You can create a Custom Network ACL. By default a custom network ACL denies all inbound and outbound traffic until you add rules
-  * Each subnet in your vpc must be associated with a network ACL. If you donot explicitly associate a subnet with a network ACL, the subnet is automatically associated with the default network ACL.
+  * `Each subnet in your vpc must be associated with a network ACL. If you donot explicitly associate a subnet with a network ACL, the subnet is automatically associated with the default network ACL`.
+
+```bash
+#login in to public server
+yum install httpd -y
+service httpd start
+cd /var/www/html
+chkconfig httpd on
+nano index.html
+  <html><h1>Hello</h1></html>
+```
+
   * You can associate a network ACL with Multiple Subnets, however a subnet can be associated only with one Network ACL at a time. When you associate a network ACL with a subnet, the previous association is removed.
   * A network ACL contains a numbered list of rules that is evaluated in order, starting with the lowest numbered rule.
   * A network ACL has separate inbound and outbound rules, and each rule can either allow or deny traffic.
   * Network ACLs are stateless; responses to the allowed inbound traffic are subject to rules for ourbound traffic (and vice versa).
 
-What will you do if you want to block traffic on a particular port for an ip address range. What will you use network acl or security groups?
+*What will you do if you want to block traffic on a particular port for an ip address range. What will you use network acl or security groups?*
 - Network ACL.
 
 ![Network ACL vs Security Groups](./images/nacl-vs-sg.jpg)
