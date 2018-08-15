@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-alpha/dist/katex.min.css" integrity="sha384-BTL0nVi8DnMrNdMQZG1Ww6yasK9ZGnUxL1ZWukXQ7fygA1py52yPp9W4wrR00VML" crossorigin="anonymous">
+        <style>
+/*--------------------------------------------------------------------------------------------- * Copyright (c) Microsoft Corporation. All rights reserved. * Licensed under the MIT License. See License.txt in the project root for license information. *--------------------------------------------------------------------------------------------*/ body { font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback"; font-size: 14px; padding: 0 26px; line-height: 22px; word-wrap: break-word; } #code-csp-warning { position: fixed; top: 0; right: 0; color: white; margin: 16px; text-align: center; font-size: 12px; font-family: sans-serif; background-color:#444444; cursor: pointer; padding: 6px; box-shadow: 1px 1px 1px rgba(0,0,0,.25); } #code-csp-warning:hover { text-decoration: none; background-color:#007acc; box-shadow: 2px 2px 2px rgba(0,0,0,.25); } body.scrollBeyondLastLine { margin-bottom: calc(100vh - 22px); } body.showEditorSelection .code-line { position: relative; } body.showEditorSelection .code-active-line:before, body.showEditorSelection .code-line:hover:before { content: ""; display: block; position: absolute; top: 0; left: -12px; height: 100%; } body.showEditorSelection li.code-active-line:before, body.showEditorSelection li.code-line:hover:before { left: -30px; } .vscode-light.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(0, 0, 0, 0.15); } .vscode-light.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(0, 0, 0, 0.40); } .vscode-light.showEditorSelection .code-line .code-line:hover:before { border-left: none; } .vscode-dark.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(255, 255, 255, 0.4); } .vscode-dark.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(255, 255, 255, 0.60); } .vscode-dark.showEditorSelection .code-line .code-line:hover:before { border-left: none; } .vscode-high-contrast.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(255, 160, 0, 0.7); } .vscode-high-contrast.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(255, 160, 0, 1); } .vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before { border-left: none; } img { max-width: 100%; max-height: 100%; } a { text-decoration: none; } a:hover { text-decoration: underline; } a:focus, input:focus, select:focus, textarea:focus { outline: 1px solid -webkit-focus-ring-color; outline-offset: -1px; } hr { border: 0; height: 2px; border-bottom: 2px solid; } h1 { padding-bottom: 0.3em; line-height: 1.2; border-bottom-width: 1px; border-bottom-style: solid; } h1, h2, h3 { font-weight: normal; } h1 code, h2 code, h3 code, h4 code, h5 code, h6 code { font-size: inherit; line-height: auto; } table { border-collapse: collapse; } table > thead > tr > th { text-align: left; border-bottom: 1px solid; } table > thead > tr > th, table > thead > tr > td, table > tbody > tr > th, table > tbody > tr > td { padding: 5px 10px; } table > tbody > tr + tr > td { border-top: 1px solid; } blockquote { margin: 0 7px 0 5px; padding: 0 16px 0 10px; border-left-width: 5px; border-left-style: solid; } code { font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback"; font-size: 14px; line-height: 19px; } body.wordWrap pre { white-space: pre-wrap; } .mac code { font-size: 12px; line-height: 18px; } pre:not(.hljs), pre.hljs code > div { padding: 16px; border-radius: 3px; overflow: auto; } /** Theming */ pre code { color: var(--vscode-editor-foreground); } .vscode-light pre:not(.hljs), .vscode-light code > div { background-color: rgba(220, 220, 220, 0.4); } .vscode-dark pre:not(.hljs), .vscode-dark code > div { background-color: rgba(10, 10, 10, 0.4); } .vscode-high-contrast pre:not(.hljs), .vscode-high-contrast code > div { background-color: rgb(0, 0, 0); } .vscode-high-contrast h1 { border-color: rgb(0, 0, 0); } .vscode-light table > thead > tr > th { border-color: rgba(0, 0, 0, 0.69); } .vscode-dark table > thead > tr > th { border-color: rgba(255, 255, 255, 0.69); } .vscode-light h1, .vscode-light hr, .vscode-light table > tbody > tr + tr > td { border-color: rgba(0, 0, 0, 0.18); } .vscode-dark h1, .vscode-dark hr, .vscode-dark table > tbody > tr + tr > td { border-color: rgba(255, 255, 255, 0.18); } 
+</style>
+<style>
+/* Tomorrow Theme */ /* http://jmblog.github.com/color-themes-for-google-code-highlightjs */ /* Original theme - https://github.com/chriskempson/tomorrow-theme */ /* Tomorrow Comment */ .hljs-comment, .hljs-quote { color: #8e908c; } /* Tomorrow Red */ .hljs-variable, .hljs-template-variable, .hljs-tag, .hljs-name, .hljs-selector-id, .hljs-selector-class, .hljs-regexp, .hljs-deletion { color: #c82829; } /* Tomorrow Orange */ .hljs-number, .hljs-built_in, .hljs-builtin-name, .hljs-literal, .hljs-type, .hljs-params, .hljs-meta, .hljs-link { color: #f5871f; } /* Tomorrow Yellow */ .hljs-attribute { color: #eab700; } /* Tomorrow Green */ .hljs-string, .hljs-symbol, .hljs-bullet, .hljs-addition { color: #718c00; } /* Tomorrow Blue */ .hljs-title, .hljs-section { color: #4271ae; } /* Tomorrow Purple */ .hljs-keyword, .hljs-selector-tag { color: #8959a8; } .hljs { display: block; overflow-x: auto; color: #4d4d4c; padding: 0.5em; } .hljs-emphasis { font-style: italic; } .hljs-strong { font-weight: bold; }
+</style>
+<style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+<style>
+.vscode-dark a { color: #61AFEF; } .vscode-dark h1, .vscode-dark h2, .vscode-dark h3, .vscode-dark h4, .vscode-dark h5, .vscode-dark h6 { font-weight: 800; color: #E06C75; } .vscode-dark, .vscode-dark pre code { color: #ABB2BF; } .vscode-dark code { color: #90C378; } .vscode-dark pre:not(.hljs), .vscode-dark code>div { background-color: #90C378; } .vscode-dark table>thead>tr>th { border-color: red; } .vscode-dark h1, .vscode-dark hr, .vscode-dark table>tbody>tr+tr>td { border-color: #2C323C; } .vscode-dark blockquote { color: #5C6370; font-style: italic; background: transparent; border-color: #2C323C; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+    </head>
+    <body>
+        <hr>
+<h2 id="title-vpcdate-08122018author-sharath">title: VPC
+date: 08/12/2018
+author: sharath</h2>
+<h1 id="vpc">VPC</h1>
+<h2 id="introduction-and-overview">Introduction and Overview</h2>
+<p><strong>Amazon Virtual Private cloud lets your proivison logically isolated section of the Amazon Web Services cloud where you can launch AWS services in a virtual network that you define.</strong></p>
+<p>You have complete control over your virtual networking environment,
+including selection of your own ip address range, creation of subnets and configuration of route tables and network gateways.</p>
+<ul>
+<li>RFC 1918 defines 3 private ip address network ranges for use throughout the world</li>
+<li>10.0.0.0 - 10.255.255.255 (10/8 prefix)</li>
+<li>172.16.0.0  - 172.31.255.255 (172.16/12 prefix)</li>
+<li>192.168.0.0 - 192.168.255.255 (192.168/24 prefix)</li>
+</ul>
+<blockquote>
+<p>Notes: storage</p>
+</blockquote>
+<p>Out of which 10.0.0.0 is the largest octet and privdes you with most nummber of ip addresses. But when using VPC AWS allows you to use the
+largest network size of 10.0.0.0/16 CIDR block</p>
+<p><img src="file:///c%3A/Users/srp19/Documents/GitHub/spark-scala/SparkScala/images/aws-vpc.jpg" alt="Virtual Private Cloud"></p>
+<blockquote>
+<p><strong>notes</strong></p>
+</blockquote>
+<ul>
+<li><code>Network ACLs and security groups can span over subnets</code>.</li>
+<li>1 subnet can span only one availability zone.</li>
+<li>
+<blockquote>
+<p>Subnets can be either public or private. You can assign custom IP address ranges in each subnet.</p>
+</blockquote>
+</li>
+<li><em>You can configure route tables betwee subnets. And those route tables will define whether or not a subnet is going to be public or private</em>.</li>
+<li>Yo can create an internet Gateway and attach it to your VPC. We can have only one internet Gateway per VPC.</li>
+<li><em>Instance security groups are stateful. When you allow http into your security group be default http is allowed out of your security group.</em></li>
+<li><u>Subnet Access control Lists are stateless. If you make a rule to allow http into your subnet you also have to create a rule to allow http out of your subnet.</u></li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x + y 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathit">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span></span></span></p>
+<p><img src="file:///c%3A/Users/srp19/Documents/GitHub/spark-scala/aws/aws-solutions-architect/section-3-1.jpg" alt="logo"></p>
+<ul class="contains-task-list">
+<li>test
+<ul>
+<li>test
+<ul>
+<li>test2</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> task1</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> task 2</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> task 3</li>
+</ul>
+<hr>
+<h2 id="title-test">title: &quot;test&quot;</h2>
+<h3 id="default-vpc-vs-custom-vpc">Default VPC vs Custom VPC.</h3>
+<blockquote>
+<p>Default VPC</p>
+</blockquote>
+<ul>
+<li>Default VPC is user friendly, allowing you to immediately deploy instances</li>
+<li>All subnets in default VPC have a route out to the internet</li>
+<li>Each instance has both public and private IP address</li>
+<li>If you delete the default VPC the only way to get it back is to contact AWS.</li>
+</ul>
+<h3 id="vpc-peering">VPC peering</h3>
+<ul>
+<li>Allows you to connect one VPC with another via a direct network route using Private IP addresses.</li>
+<li>Instances behave as if they are on the same private network</li>
+<li>You can peer VPCs with other AWS accounts as well as with other VPC's in the same account</li>
+<li><strong>Peering is always done in a star configuration</strong>, ie 1 central VPC peers with 4 others. You cannot do transitive peering.</li>
+</ul>
+<h2 id="build-your-own-custom-vpc">Build your own custom VPC</h2>
+<ul>
+<li>When we craate a VPC it aws doesn't automatically create a subnet, intetnet gateways but automatically creates route table, network acls
+and security groups.</li>
+<li>While creating any subnet you would get 5 address less than the subnet size. So for a 0 - 255 subnet you would get 251 addresses.
+Due to the following for a 10.0.0.0/24 subnet.</li>
+<li>10.0.0.0 - Network Address</li>
+<li>10.0.0.1 - Reserved by AWS for VPC Router</li>
+<li>10.0.0.2 - Reserved by AWS. The IP address of the DNS server is always the base of VPC network range plus 2. AWS also reserves base of each subnet range plus 2.</li>
+<li>10.0.0.3 - Reserved by AWS for Future use.</li>
+<li>10.255.255.255 - Broadcast address</li>
+</ul>
+<p>Lab on creating an instance in a Public Subnet. IGW creation, route table creation, attaching IGW to VPC etc.</p>
+<p><img src="file:///c%3A/Users/srp19/Documents/GitHub/spark-scala/SparkScala/images/aws-vpc-diag.jpg" alt="Virtual Private Cloud Lab summary"></p>
+<h2 id="build-your-own-custom-vpc-part-2">Build your own custom VPC Part 2</h2>
+<p>Privisioning an instance into private subnet and accessing it through an instance in public subnet.</p>
+<h2 id="network-address-translation">Network Address Translation)</h2>
+<p>NAT instance vs NAT Gateway (<a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-comparison.html">http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-comparison.html</a>)</p>
+<ul>
+<li>NAT Instance
+<ul>
+<li>Source destination check on a nat instance should be disabled, because it is not going to act as destination or originator of any traffic, we are going to route traffic from our private subnet resources to the internet and vice versa throught the nat instance.</li>
+<li>NAT instance can be launched using AWS NAT linux amis available in the market place.</li>
+<li>NAT instance should be launched in public subnet. It should have a public IP address as well.</li>
+<li>Add the NAT instance to the route of private subnet.</li>
+<li>The amount of traffic that a nat instance supports depends on the instance size. so if you are bottlenecking, increase the instance size.</li>
+<li>You can create high availability of NAT instances using Auto Scaling groups, multiple subnets in different AZ's and a script to automate failover.</li>
+<li>NAT instances are always behind a security group.</li>
+</ul>
+</li>
+<li>NAT gateways
+<ul>
+<li>Scale automatically upto 10 GBPS</li>
+<li>No need to patch them</li>
+<li>No need to assign them with security groups.</li>
+<li>Once NAT gateway is created, associate them with private subnet.</li>
+</ul>
+</li>
+</ul>
+<h4 id="section-8-lecture-67-network-access-control-lists-vs-security-groups">Section 8, Lecture 67 (Network Access Control Lists Vs Security groups)</h4>
+<p><img src="file:///c%3A/Users/srp19/Documents/GitHub/spark-scala/SparkScala/images/2018-08-12-16-15-13.png" alt=""></p>
+<blockquote>
+<p><strong>Network ACL's</strong></p>
+</blockquote>
+<ul>
+<li>With your VPC comes a default Network ACL and by default it allows all outbound and in bound traffic.</li>
+<li>You can create a Custom Network ACL. By default a custom network ACL denies all inbound and outbound traffic until you add rules</li>
+<li><code>Each subnet in your vpc must be associated with a network ACL. If you donot explicitly associate a subnet with a network ACL, the subnet is automatically associated with the default network ACL</code>.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-comment">#login in to public server</span>
+yum install httpd -y
+service httpd start
+<span class="hljs-built_in">cd</span> /var/www/html
+chkconfig httpd on
+nano index.html
+  &lt;html&gt;&lt;h1&gt;Hello&lt;/h1&gt;&lt;/html&gt;
+</div></code></pre>
+<ul>
+<li>You can associate a network ACL with Multiple Subnets, however a subnet can be associated only with one Network ACL at a time. When you associate a network ACL with a subnet, the previous association is removed.</li>
+<li>A network ACL contains a numbered list of rules that is evaluated in order, starting with the lowest numbered rule.</li>
+<li>A network ACL has separate inbound and outbound rules, and each rule can either allow or deny traffic.</li>
+<li>Network ACLs are stateless; responses to the allowed inbound traffic are subject to rules for ourbound traffic (and vice versa).</li>
+</ul>
+<p><em>What will you do if you want to block traffic on a particular port for an ip address range. What will you use network acl or security groups?</em></p>
+<ul>
+<li>Network ACL.</li>
+</ul>
+<p><img src="file:///c%3A/Users/srp19/Documents/GitHub/spark-scala/SparkScala/images/nacl-vs-sg.jpg" alt="Network ACL vs Security Groups"></p>
+<ul>
+<li>Ephemeral ports:</li>
+</ul>
+<p>The example network ACL in the preceding section uses an ephemeral port range of 49152-65535. However, you might want to use a different range for your network ACLs depending on the type of client that you're using or with which you're communicating.</p>
+<p>The client that initiates the request chooses the ephemeral port range. The range varies depending on the client's operating system. Many Linux kernels (including the Amazon Linux kernel) use ports 32768-61000. Requests originating from Elastic Load Balancing use ports 1024-65535. Windows operating systems through Windows Server 2003 use ports 1025-5000. Windows Server 2008 and later versions use ports 49152-65535. A NAT gateway uses ports 1024-65535. For example, if a request comes into a web server in your VPC from a Windows XP client on the Internet, your network ACL must have an outbound rule to enable traffic destined for ports 1025-5000.</p>
+<p>If an instance in your VPC is the client initiating a request, your network ACL must have an inbound rule to enable traffic destined for the ephemeral ports specific to the type of instance (Amazon Linux, Windows Server 2008, and so on).</p>
+<p>In practice, to cover the different types of clients that might initiate traffic to public-facing instances in your VPC, you can open ephemeral ports 1024-65535. However, you can also add rules to the ACL to deny traffic on any malicious ports within that range. Ensure that you place the DENY rules earlier in the table than the ALLOW rules that open the wide range of ephemeral ports.</p>
+<h2 id="section-8-lecture-69-elbs--vpcs">Section 8, Lecture 69 (ELB's &amp; VPC's)</h2>
+<p>ELB's</p>
+<p>Interner facing ELBS should be created in Public Subnets.</p>
+<h2 id="section-8-lecture-70-nats-vs-bastions">Section 8, Lecture 70 (Nats Vs Bastions)</h2>
+<ul>
+<li>A Nat if used to provide internet traffic to EC2 instances in private subnets.</li>
+<li>A Bastion is used to Securely administer EC2 instances (using ssh or RDP) in private subnets. In australia we call them jump boxes.</li>
+</ul>
+<h2 id="section-8-lecture-71-vpc-flow-logs">Section 8, Lecture 71 (VPC Flow Logs)</h2>
+<ul>
+<li>Flowlogs help you to capture IP traffic flow information for the network interfaces resources. So basically it is going to capture all the traffic and report it to cloudwatch.</li>
+<li>An cloudwatch access IAM role is needed to log traffic to cloudwatch. Also you need to create a log group, and option in cloudwatch.</li>
+<li>Any traffic that's going into the VPC will be logged against the eni names.</li>
+<li>You also have to create log stream in log group inorder to see all the log data.</li>
+</ul>
+<h2 id="section-8-lecture-72-vpc-cleanup">Section 8, Lecture 72 (VPC Cleanup)</h2>
+<p>Most of the things are known</p>
+<h2 id="section-8-lecture-73-vpc-summary">Section 8, Lecture 73 (VPC Summary)</h2>
+<p><a href="faqs/aws-vpc-faqs.md">VPC FAQ's</a></p>
+
+    </body>
+    </html>

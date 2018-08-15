@@ -1,3 +1,8 @@
+---
+title: VPC
+date: 08/12/2018
+author: sharath
+---
 # VPC
 
 ## Introduction and Overview
@@ -11,7 +16,9 @@ including selection of your own ip address range, creation of subnets and config
  * 10.0.0.0 - 10.255.255.255 (10/8 prefix)
  * 172.16.0.0  - 172.31.255.255 (172.16/12 prefix)
  * 192.168.0.0 - 192.168.255.255 (192.168/24 prefix)
-  
+
+>Notes: storage
+
  Out of which 10.0.0.0 is the largest octet and privdes you with most nummber of ip addresses. But when using VPC AWS allows you to use the 
  largest network size of 10.0.0.0/16 CIDR block
 
@@ -27,6 +34,7 @@ including selection of your own ip address range, creation of subnets and config
 * *Instance security groups are stateful. When you allow http into your security group be default http is allowed out of your security group.*
 * <u>Subnet Access control Lists are stateless. If you make a rule to allow http into your subnet you also have to create a rule to allow http out of your subnet.</u>
 
+
 ### Default VPC vs Custom VPC.
 
 >Default VPC
@@ -40,7 +48,7 @@ including selection of your own ip address range, creation of subnets and config
 * Allows you to connect one VPC with another via a direct network route using Private IP addresses.
 * Instances behave as if they are on the same private network
 * You can peer VPCs with other AWS accounts as well as with other VPC's in the same account
-* Peering is always done in a star configuration, ie 1 central VPC peers with 4 others. You cannot do transitive peering.
+* **Peering is always done in a star configuration**, ie 1 central VPC peers with 4 others. You cannot do transitive peering.
 
 ## Build your own custom VPC
 

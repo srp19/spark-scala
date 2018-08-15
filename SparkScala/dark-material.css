@@ -1,0 +1,57 @@
+body {
+	font-family: "Avenir LT Std", "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 26px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+.vscode-dark a {
+    color: #61AFEF;
+}
+
+.vscode-dark h1,
+.vscode-dark h2,
+.vscode-dark h3,
+.vscode-dark h4,
+.vscode-dark h5,
+.vscode-dark h6 {
+    font-weight: 800;
+    color: #E06C75;
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+    color: #ABB2BF;
+}
+
+.vscode-dark code {
+    color: #90C378;
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code>div {
+    background-color: #90C378;
+}
+
+.vscode-dark table>thead>tr>th {
+    border-color: red;
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table>tbody>tr+tr>td {
+    border-color: #2C323C;
+}
+
+.vscode-dark blockquote {
+    color: red;
+    font-style: normal;
+    background: white;
+}
+
+blockquote {
+    color: red;
+    font-style: normal;
+    background: white;
+}
