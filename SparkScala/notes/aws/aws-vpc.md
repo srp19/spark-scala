@@ -7,7 +7,7 @@ author: sharath
 
 ## Introduction and Overview
 
-**Amazon Virtual Private cloud lets your proivison logically isolated section of the Amazon Web Services cloud where you can launch AWS services in a virtual network that you define.**
+**VPC (Virtual Private Cloud) is a logical data center. It lets you proivison logically isolated section of the AWS cloud, where you can launch AWS services in a virtual network, that you define.**
 
 You have complete control over your virtual networking environment,
 including selection of your own ip address range, creation of subnets and configuration of route tables and network gateways.
@@ -31,7 +31,7 @@ including selection of your own ip address range, creation of subnets and config
 * >Subnets can be either public or private. You can assign custom IP address ranges in each subnet.
 * _You can configure route tables betwee subnets. And those route tables will define whether or not a subnet is going to be public or private_.
 * Yo can create an internet Gateway and attach it to your VPC. We can have only one internet Gateway per VPC.
-* *Instance security groups are stateful. When you allow http into your security group be default http is allowed out of your security group.*
+* *Instance security groups are stateful. When you allow http into your security group by default http is allowed out of your security group.*
 * <u>Subnet Access control Lists are stateless. If you make a rule to allow http into your subnet you also have to create a rule to allow http out of your subnet.</u>
 
 
@@ -52,8 +52,7 @@ including selection of your own ip address range, creation of subnets and config
 
 ## Build your own custom VPC
 
-* When we craate a VPC it aws doesn't automatically create a subnet, intetnet gateways but automatically creates route table, network acls 
-and security groups.
+* When we create a VPC AWS doesn't automatically create a subnet, intetnet gateways but automatically creates route table, network acl and security groups.
 * While creating any subnet you would get 5 address less than the subnet size. So for a 0 - 255 subnet you would get 251 addresses.
 Due to the following for a 10.0.0.0/24 subnet. 
  * 10.0.0.0 - Network Address
@@ -73,7 +72,7 @@ Privisioning an instance into private subnet and accessing it through an instanc
 ## Network Address Translation)
 NAT instance vs NAT Gateway (http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-comparison.html)
 
-* NAT Instance
+### NAT Instance
   * Source destination check on a nat instance should be disabled, because it is not going to act as destination or originator of any traffic, we are going to route traffic from our private subnet resources to the internet and vice versa throught the nat instance.
   * NAT instance can be launched using AWS NAT linux amis available in the market place.
   * NAT instance should be launched in public subnet. It should have a public IP address as well.
@@ -81,7 +80,7 @@ NAT instance vs NAT Gateway (http://docs.aws.amazon.com/AmazonVPC/latest/UserGui
   * The amount of traffic that a nat instance supports depends on the instance size. so if you are bottlenecking, increase the instance size.
   * You can create high availability of NAT instances using Auto Scaling groups, multiple subnets in different AZ's and a script to automate failover.
   * NAT instances are always behind a security group.
-* NAT gateways
+### NAT gateways
   * Scale automatically upto 10 GBPS
   * No need to patch them
   * No need to assign them with security groups.
@@ -94,7 +93,7 @@ NAT instance vs NAT Gateway (http://docs.aws.amazon.com/AmazonVPC/latest/UserGui
 >**Network ACL's**
   * With your VPC comes a default Network ACL and by default it allows all outbound and in bound traffic.
   * You can create a Custom Network ACL. By default a custom network ACL denies all inbound and outbound traffic until you add rules
-  * `Each subnet in your vpc must be associated with a network ACL. If you donot explicitly associate a subnet with a network ACL, the subnet is automatically associated with the default network ACL`.
+  * `Each subnet in your vpc must be associated with a network ACL. If you don't explicitly associate a subnet with a network ACL, the subnet is automatically associated with the default network ACL`.
 
 ```bash
 #login in to public server
@@ -130,7 +129,7 @@ In practice, to cover the different types of clients that might initiate traffic
 
 ELB's
 
-Interner facing ELBS should be created in Public Subnets.
+Internet facing ELBS should be created in Public Subnets.
 
 ## Section 8, Lecture 70 (Nats Vs Bastions)
 
