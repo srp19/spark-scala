@@ -1,8 +1,8 @@
-#Note for Programming in Scala
+# Note for Programming in Scala
 
 <br>
 
-##Chp.0 SBT & Scala Interpreter
+## Chp.0 SBT & Scala Interpreter
 
 1. Call scala interpreter by `sbt`.
 
@@ -30,17 +30,17 @@
 	```
 <br>
 
-##Chp.1 A Scalable Language
+## Chp.1 A Scalable Language
 
 0. Scala is a **hybrid of functional and object-oriented** language. It is also **statically typed**.
 
-	> ####[stackoverflow.com#Difference between strongly/statically typed language](http://stackoverflow.com/questions/2690544/what-is-the-difference-between-a-strongly-typed-language-and-a-statically-typed)
+	> #### [stackoverflow.com#Difference between strongly/statically typed language](http://stackoverflow.com/questions/2690544/what-is-the-difference-between-a-strongly-typed-language-and-a-statically-typed)
 
 1. **Functional programming** has two main concepts:
  	- Function is a first-class value.
 	- **Any function should map input values to output values, instead of changing input data in function scope**.
 
-2. By above definition, Scala treat function as a value, and **its input parameters are declared as immutable `val` constant rather than muttable `var` variables**.
+2. By above definition, Scala treats function as a value, and **its input parameters are declared as immutable `val` constant rather than muttable `var` variables**.
 
     ```scala
     // Because x is a val constant, so error will pop.
@@ -53,7 +53,7 @@
     ```
 <br>
 
-##Chp.2 First Step in Scala
+## Chp.2 First Step in Scala
 
 0. Define variables by **constant `val` or variable `var`**. **Constant in Scala is immutable and unreassignable**.
 

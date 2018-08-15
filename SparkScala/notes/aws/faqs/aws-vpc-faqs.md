@@ -11,7 +11,7 @@ Amazon VPC comprises a variety of objects that will be familiar to customers wit
     Hardware VPN Connection: A hardware-based VPN connection between your Amazon VPC and your datacenter, home network, or co-location facility.
     Virtual Private Gateway: The Amazon VPC side of a VPN connection.
     Customer Gateway: Your side of a VPN connection.
-    Router: Routers interconnect subnets and direct traffic between Internet gateways, virtual private gateways, NAT gateways, and subnets.
+    Router: Routes interconnect subnets and direct traffic between Internet gateways, virtual private gateways, NAT gateways, and subnets.
     Peering Connection: A peering connection enables you to route traffic via private IP addresses between two peered VPCs.
     VPC Endpoint: Enables Amazon S3 access from within your VPC without using an Internet gateway or NAT, and allows you to control the access using VPC endpoint policies.
     Egress-only Internet Gateway: A stateful gateway to provide egress only access for IPv6 traffic from the VPC to the Internet
