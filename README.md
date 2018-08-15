@@ -1,2 +1,1 @@
-# spark-scala
-spark scala projects
+Spark Scala Projects
