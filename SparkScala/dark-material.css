@@ -15,7 +15,7 @@ body {
 .vscode-dark h5,
 .vscode-dark h6 {
 	font-weight: 600;
-	color: #E06C75;
+	color: rgb(206, 83, 179);
 }
 
 .vscode-dark,
@@ -43,13 +43,17 @@ body {
 }
 
 .vscode-dark blockquote {
-    color: red;
+    color: rgb(236, 100, 230);
     font-style: normal;
-    background: white;
 }
 
 blockquote {
-    color: red;
+    color: rgb(221, 113, 113);
     font-style: normal;
-    background: white;
+}
+strong {
+    color: rgb(216, 176, 101);
+}
+em {
+    color: hotpink;
 }

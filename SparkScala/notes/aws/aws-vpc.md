@@ -26,9 +26,9 @@ including selection of your own ip address range, creation of subnets and config
 
 >**notes**
 
-* `Network ACLs and security groups can span over subnets`.
+* Network ACLs and security groups can span over subnets.
 * 1 subnet can span only one availability zone.
-* >Subnets can be either public or private. You can assign custom IP address ranges in each subnet.
+* Subnets can be either public or private. You can assign custom IP address ranges in each subnet.
 * _You can configure route tables betwee subnets. And those route tables will define whether or not a subnet is going to be public or private_.
 * Yo can create an internet Gateway and attach it to your VPC. We can have only one internet Gateway per VPC.
 * *Instance security groups are stateful. When you allow http into your security group by default http is allowed out of your security group.*
